@@ -1,0 +1,257 @@
+DAY 5 
+-----------------
+Aim High 
+Aim for 30 - 40 lakhs and 3 hrs practice everyday.
+Have a great smile on your face everyday for 2 mins mngs.
+sr@talentio.in
+Discipline > Motivation
+
+Geeks for geeks coding questions
+Must do coding questions from product based companies 
+https://www.geeksforgeeks.org/must-do-coding-questions-for-product-based-companies/
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h> ---> It includes all the header files. It also includes iostream, string and so on..
+
+Mathematics in Coding ----
+
+1. Finding the number of digits in a number
+Input - 2019
+Output - 4 --> Number of digits 
+	2,0,1,9 --> Digits in forward order
+
+Simple solution - to count the number of digits --> int x = log10(N) + 1
+
+2. Arithmetic and Geometric Progression 
+AP --> a, a+d, a+2d, a+3d ---  
+	::: an = ao + (n-1)d; an : nth term and ao : first term and d : common difference
+	::: sn = n/2(2a+(n-1)d)  --> Sum of n terms - sn
+	    sn = a1 + a2 + a3 + a4 + --
+	    sn = a1 + a1+d + a1+2d + a1+3d + ---
+	    sn = na1 + d(1+2+3+4+---+(n-1))
+	    sn = na1 + d(n(n-1)/2)
+	    sn = n/2(2a1 + (n-1)d)
+AP : 1 4 7 10 ---> +3 is the common difference
+
+To print the first 20 terms and the sum. Given a1 = -6 and d = 5
+Output - -6 -1 4 9 14 19 24 29 34 39 44 49 54 59 64 69 74 79 84 
+830
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    int a,d;
+    cin>>a>>d;
+    for(int i=1;i<n;i++){
+        int x = a+(i-1)*d;
+        cout<<x<<' ';
+    }
+    cout<<endl;
+    int s = (n/2)*(2*a + (n-1)*d);
+    cout<<s;
+    return 0;
+}
+
+Try to solve :: The sum of first 20 odd terms and even terms Hint: Have a skip of +2
+
+GP ---> ar, ar**2, ar**3, ----, ar**n-1
+GP : 110, 220, 440, 880, 1760 ---> *2 is the common multiple 
+Sum of n terms --> sn = a(r**n - 1)/(r-1)
+
+
+Mean and Medians - 
+Mean --> (a1,a2,a3, ---, an): sum(a1,a2,--,an)/N;
+To find the sum of n integers - 10 and 1,2,3,4,5,6,7,8,9,10
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n; 
+    cin>>n;
+    int a[n];
+    double s=0;
+    for(int i=0; i<n; i++){
+        cin>>a[i];
+        s+=a[i];
+    }
+    float x=s/n;
+    cout<<x;
+    return 0;
+}
+
+Output - 5.5 ::> To avoid an integer output you can have double to s
+
+Median - It is the middle value of a set of data. Median = mean after sorting the sequence.
+
+Sorting --> 
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n=7;
+    int a[7]={1,54,2354,6,4,3,2};
+    sort(a,a+n); // This is for array 
+    for(int i=0;i<n;i++)
+        cout<<a[i]<<' ';
+    // sort(a.begin(), a.end()); // This is for vectors
+}
+
+To check a prime number - 
+Methods to check if a number is prime --> 
+	1. Naive Method
+	2. Sieve of Eratosthenes
+
+Brute Force Approach - O(N)
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n=10,i;
+    for(i=2;i<n;i++){
+        if(n%i==0) break;
+    }
+    if(i==n-1) cout<<"Prime";
+    else cout<<"Not Prime";
+}
+
+LCM , HCF/GCD --> 
+LCM(10,15) --> 30
+Multiples of 10 --> 10,20,30,40
+Multiples of 15 --> 15,30,45,60
+LCM = 30 (Least Multiple)
+GCD(10,15) --> 5
+Divisors of 10 --> 1,2,5,10
+Divisors of 15 --> 1,5,15
+GCD = 5 (Greatest Divisor)
+
+In C++ --> GCD : __gcd(a,b)
+	   LCM : (a/__gcd(a,b))*b;
+
+Permutations and Combinations - 
+In permutations order matters and in combinations order doesn't matters
+nPr = n!/(n-r)!
+nCr = n!/r!*(n-r)!
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int fact(int a){
+    int res;
+    if(a==1) return 1;
+    else return a*fact(a-1);
+}
+int main()
+{
+    int y = fact(8)/(fact(3)*fact(8-3));
+    cout<<y;
+}
+
+It is impossible for 20C10 :: because fact(20) will have atleast 16 digits. So the new concept can be taken 
+Modular Arithmetic
+Consider numbers a and b operated under modulo M.
+
+(a+b) mod M = ((a mod M) + (b mod M)) mod M
+(a-b) mod M = ((a mod M) - (b mod M) + M) mod M
+(a*b) mod M = ((a mod M) * (b mod M)) mod M
+
+find (a*b*c) mod M where: a= 10^9 b=10^8 c=10^9 and M=10^9+7
+
+
+
+
+
+
+
+
+
+
+Check the different approaches to solve the question in less time and space complexity - 
+Questions in leetcode check the submission - 
+1. Two sum II
+2. 
+
+Mathematics Important topics - 
+Sorting 
+Two pointer method
+Modular Arithmetic
+
+Recursion pb/m from Towers of Hanoi
+
+Stack Overflow error occur in recursion - If the base case is not reached or not defined.
+
+Recursion in fibonocci - 
+#include<bits/stdc++.h>
+using namespace std;
+
+int fib(int n){
+    int c;
+    if(n<=1) return n;
+    else return fib(n-1)+fib(n-2); // an = a(n-1)+a(n-2);
+}
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<fib(n);
+}
+
+Recursion to find the subarray is equals to the array
+#include<bits/stdc++.h>
+#include<valarray>
+using namespace std;
+
+bool func(int arr[], int n,int i, int sum,int target)
+{
+    if(sum==target) return true;
+    else if(n==i) return false;
+    else{
+        bool a = func(arr,n,i+1,sum+arr[i],target);
+        bool b = func(arr,n,i+1,sum,target);
+        return a || b;
+    }
+}
+
+
+int main()
+{
+    int arr[10]={1,2,3,4,5,6,7,8,9,10};
+    int n=10;
+    int target=19;
+    bool ans=func(arr,n,0,0,19);
+    if(ans=true) cout<<"YES";
+    else cout<<"NO";
+    return 0;
+}
+
+
+
+Problems 
+-----------
+1. Kth smallest element in a sorted matrix - 378
+2. Matrix cells in distance order
+3. Lucky numbers in a matrix
+4. Camelcase matching
+5. Spiral matrix 2
+6. two sum 2 - 167
+7. 3sum - 15
+8. Prime palindrome - 
+9. Ugly number 2 - 
+10. Maximal Rectangle
+11. Rectangle Overlap
+12. Rectangle area
+13. Nmber of recent calls
+14. construct the rectangle
+15. Fraction to recurring decimal - 166

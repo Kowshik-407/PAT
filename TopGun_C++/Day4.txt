@@ -1,0 +1,229 @@
+DAY 4 
+------------------------
+
+
+1. Reverse Bits - 190
+2. Counting Bits - 338
+3. 1-bit and 2-bit characters - 717
+4. Prime Number of Set Bits in Binary Representation - 762
+5. Maximum XOR with an element from array - 1707
+6. Bitwise ORs of subarrays - 898
+
+TCS CodeVita - 
+One egg is an egg supply company which supplies eggs to retailers they have m classes of eggs. Each class can have n number of eggs n can be the same or can vary class to class. They accept orders via mail for x eggs. In response they confirm if they can supply the eggs with the thank you note or if they can't with the sorry note and the number of eggs they can provide. They also mention the breakdown of eggs. By the class they will supply. The ordered eggs are adjusted against different classes with the most number of eggs adjusted first then, the balance is adjusted in the second highest and so on.... The company is bit superstitious as well if the number of eggs ordered is greater than or equals to the total number of eggs in stock they retain one  egg and responds back to the sorry note with the total number of eggs in stock - 1 and breakdown of eggs by class.
+NOTE ::> If the classes have same number of eggs then class entered first should be selected to adjust
+Input - 
+5 	150 
+50 
+15
+80 
+10
+5
+
+Output - 
+Thank you, your order is accepted for 150 eggs
+50	50 	0  
+15	15	0	
+80	80 	0
+10 	5  	5
+5	0 	5
+
+a,b = 5,150
+l = [50,15,80,10,5]
+print("Thank you, your order is accepted for "+str(b)+" eggs")
+for i in range(a):
+    if b>=l[i]: 
+        b-=l[i]
+        print(l[i],l[i],l[i]-l[i])
+    else:
+        if(b!=0):
+            x=l[i]-b
+            print(l[i],x,l[i]-x)
+            b=0
+        else:
+            print(l[i],0,l[i])
+
+A pub serves wine in peg glasses of different sizes the possible sizes are 1, 5, 7, 10. He wants to supply or the pub wants to supply the desired quantity using less glasses as possible. Irrespective of the size. Your objective is to help him find the minimum number of glasses required to supply the demand. 
+Input - 
+No. Of testcases - 2
+17
+65
+Output - 
+2
+7
+
+Input - 
+99 
+63 
+Output - 
+12
+9
+
+#include<iostream>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    for(int i=0;i<t;i++){
+        int n;
+        cin>>n;
+        int c=0,r,q;
+        while(n>0){
+            if(n>=10){
+                r=n%10;
+                q=n/10;
+                c+=q;
+                n=r;
+            }
+            else if(n>=7){
+                r=n%7;
+                q=n/7;
+                c+=q;
+                n=r;
+            }
+            else if(n>=5){
+                r=n%5;
+                q=n/5;
+                c+=q;
+                n=r;
+            }
+            else if(n>=1){
+                r=n%1;
+                q=n/1;
+                c+=q;
+                n=r;
+            }
+        }
+        cout<<c<<endl;
+    }
+    
+    
+    return 0;
+}
+
+# cook your dish here
+t = int(input())
+for i in range(t):
+    n = int(input())
+    c=0
+    while(n>0):
+        if(n>=10):
+            q=n//10
+            r=n%10
+            c+=q
+            n=r
+        elif(n>=7):
+            q=n//7
+            r=n%7
+            c+=q
+            n=r
+        elif(n>=5):
+            q=n//5
+            r=n%5
+            c+=q
+            n=r
+        elif(n>=1):
+            q=n//1
+            r=n%1
+            c+=q
+            n=r
+    print(c)
+
+
+Suresh is librarian at the central library of the city huskey land he must handled request which come in the following terms : 
+1. X Y: insert a book with y pages at the end of the xth shelf.
+2. X Y: print the number of pages in the yth book on the xth shelf.
+3. X: print the number of books on the xth shelf.
+Suresh has got an assistant oz provided by the department. Although inexperience oz can handle all the queries of the type 2 and 3. Help suresh deal with all queries of type 1
+Input - 
+5 --> Total no. of shelves in the library
+5 --> Total no. of queries
+1 0 15 --> 1 is a query.
+1 0 20
+1 2 78
+2 2 0
+3 0 
+Output - 
+78 2 --> There are five shelves in five requests. First ip 15th page book at the end of 0th shelf. Second ip 20th page book at the end of 0th shelf. 78 
+
+n=int(input())
+q=int(input())
+l=[[] for i in range(q)]
+for i in range(q):
+    k=list(map(int,input().split()))
+    if(k[0]==1):
+        l[k[1]].append(k[2])
+    elif k[0]==2:
+        print(l[k[1]][k[2]])
+    else:
+        print(len(l[0]))
+print(l)
+
+
+2 children want to share a chocolate bar each of the square has an integer on it. Lily decides to share a contiguos segment on the bar selected such that the length of the segment matches ron's birthday month and the sum of the integers on the squares is equals to his birthday determine how many ways she can divide the chocolate. 
+Input - 
+5 --> Number of chocolate squares
+1 2 1 3 2 --> Integers on chocolate squares
+3 2 --> Birthmonth, Birthdate
+Ouptut - 
+2
+
+n = 5
+l = [1,2,1,3,2]
+b = [3,2]
+c = 0
+for i in range(n):
+    if sum(l[i:b[1]+i]) == b[0]:
+        c += 1
+print(c)
+
+#include<iostream>
+using namespace std;
+int main(){
+int n=5;
+int a[n]={1,2,1,3,2};
+int b[2]={3,2};
+int c=0,s,j;
+for(int i=0;i<n-b[1];i++){
+    s = 0;
+    for(j=i;j<b[1];j++){
+        s += a[j];
+    }
+    if(s==b[0] && j!=b[1]-1){
+        c += 1;
+    }
+}
+cout<<c;
+return 0;
+}
+
+
+A certain university has the following grading policy every student receives a grade in inclusive range from 0 to 100 any grade < 40 is a failing grade. Sam is a professor at the university and likes to round each student grade according to this rules if the difference between the grade and the next multiple of 5 is less than 3. Round the grade upto the next multiple of 5. If the value of the grade is less than 38 no rounding occurs as the result will still be a failing grade. 
+Input - 
+4 --> Grades
+73
+67
+38 
+33
+Output - 
+75
+67
+40
+33
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n=4;
+    int a[4]={73,67,38,33},x;
+    for(int i=0;i<n;i++){
+        x = a[i]%5;
+        if (((5-x)<3) && (a[i]>=38)){
+            a[i] += (5-x);
+        }
+    }
+    for(int i=0;i<n;i++){
+        cout<<a[i]<<endl;
+    }
+    return 0;
+}

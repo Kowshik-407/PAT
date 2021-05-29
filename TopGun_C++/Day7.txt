@@ -1,0 +1,178 @@
+DAY 7 
+------------
+
+Google Coding Competitions - Kickstart ::> https://codingcompetitions.withgoogle.com/kickstart
+
+
+
+INFYTQ Explaination process today 
+
+
+INFYTQ Pattern 
+---------------------------
+Round - 1: (40 Ques - 60 Mins) ::> +1 for (+)ve and -0.25 for (-)ve
+1. Python MCQ's - 20 
+2. DBMS MCQ's   - 10
+3. Aptitude     - 10
+
+Cut-off ::> 65%, atleast 26 marks
+
+Round - 2: (3 hours) ::> No negative Marking
+1. Python pb/m solving - 2 Questions
+2. Python MCQ's        - 10 
+2. DBMS MCQ's	       - 10
+
+Advantage Round: (3 hours)
+::> Programming questions with varying level of difficulty (3 Questions)
+::> Each question will have a different weightage of marks. 225 marks
+
+Cut-off ::> 65%, atleast 26 marks
+
+
+InfyTQ - https://www.faceprep.in/infosys/infytq-questions/
+Logical Reasoning - https://www.faceprep.in/infosys/infosys-aptitude-questions/
+
+Syllabus - 
+
+Programming Fundamentals using Python
+a. Introduction to Programming
+b. Algorithms
+c. Pseudocode
+d. Control Structures
+e. Eclipse Plug-in
+f. Debugging
+g. Collections
+h. Functions
+i. Exception Handling
+j. Recursion
+k. Libraries and Functions
+l. File Handling
+
+Object-Oriented Programming Retail
+a. Introduction
+b. OOP Basics
+c. Encapsulation
+d. Using Objects
+e. Eclipse tips
+f. Static
+g. Relationships
+h. Inheritance
+i. Abstract class
+j. Exception Handling
+
+Data Structures and Algorithms
+a. Introduction to Data Structures
+b. List Data Structure
+c. Stack
+d. Queue
+e. Non-linear Data structures
+f. Hashing and hash table
+g. Search algorithm
+h. Sort algorithm
+i. Algorithm technique 
+
+Learning DBMS and SQL
+a. Entities and Relationships diagram
+b. SQL basics
+c. DDL statements
+d. DML statements
+e. Joins
+f. Subquery
+g. Transactions
+h. Modular query writing
+i. Normalization
+j. No SQL databases
+
+difference between binary and boolean
+ASCII values checking  - Total of 255
+
+1.
+if print("abc"): print("Hello") --> it works on the concept of boolean : print() doesn't return any value. Hence, 0
+op: abc
+
+2.
+if 10<20:
+    print('1')
+
+if 10<20:
+print('1')
+
+if 10<20:
+ print('1')
+
+Which results indentation error --> 2
+
+3. 
+if 3 and 0 or 4:
+ print('1')
+else:
+ print('0')
+
+Op: 1 --> Evaluation of if statement always from left to right. (and) & (or) operation always checks non-zero or zero value.
+
+4. 
+l=[1,2,3,4]
+print(all(l)) and try any and have list 0 returns True and False
+
+
+
+5. 
+if 1 in '123':
+    print(1)
+if 1 in 123:
+    print(2)
+op: TypeError - argument of type 'int' is not iterable for 2nd if stmt
+    TypeError - requires string, not int for 1st if stmt
+
+6. 
+Why string is a default datatype in python? ::> string is a char array, and ends with null char
+ In python there is no character data type, a character is a string of length one.
+
+Which datastructure is default ds in python? ::> Python's tuples are a straightforward data structure for grouping arbitrary objects. Tuples are immutable—they can't be modified once they've been created. Performance-wise, tuples take up slightly less memory than lists in CPython, and they're also faster to construct.
+
+How many data structures in python? ::> Python has four basic inbuilt data structures namely Lists, Dictionary, Tuple and Set. These almost cover 80% of the our real world data structures.
+
+a,b=4,2
+switch={
+1:a+b,
+2.a-b
+}
+switch.get(2) --> ans::> 2
+Switch case in python ::> It is meant by dictionary hence, we can have any data type
+whereas, in c: we can have only int and char as a keyvalue
+
+Note: There is a null-termination in python.
+
+7. 
+v = 10
+for i in range(10):
+    v += 1
+else:
+    v += 1
+print(v)
+op: v = 21 ::> because, for every loop termination else condition is True because, i will be happen 11 and for loop will be taken as false, therefore, it satisfies else stmt. There will be no syntax error of using else without if stmt.
+Note: after using the continue stmt, we cannot have any stmt to be taken.
+
+Arrays and strings are datastructures, but not datatypes .
+
+Basic programs to be prepared - Number systems, datastructures
+
+What are the type of statements - 
+int a=5; // It is a definition of a variable. (Always to be valued as reverse. 5 is valued to the variable a and the type of int)
+int a; // not declaration. It is static variable
+a=5;   // assignment or initialization
+
+Variable declaration syntax - 
+storageclass typeclassifier typemodifier datatype variable;
+
+Arrays - A collection of data with similar datatype, and accesing of sequential memory location.
+Recursion - A function calls itself, and terminates the function using base case.
+
+In arrays - A2x3 --> A can be said as script not as array name |||| 2X3 can be said as subscript not as rows and columns
+A[2][3] --> 2 and 3 are called as dimensions not as rows and cols 
+	--> 2 represents the number of 1D dimensions and 3 represents represents the number of elements in 1D dimension
+A[][3]  --> It is valid
+A[2][]  --> It is invalid
+
+sets - ordered indices 
+dictionary - unordered indices

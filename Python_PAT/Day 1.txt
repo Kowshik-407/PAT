@@ -1,0 +1,228 @@
+// C language
+#include<stdio.h>
+main(){
+printf("Hello World");
+}
+
+// Java language
+class A{
+public static void main(String args[]){
+System.out.println("Hello world");
+}
+
+// Python language
+print("Hello World");
+
+{} --> It is a block Statement and it is used in procedural Programming.
+Whereas, in Python there is an unnecessary of using block statements
+
+a++
+a+=1
+a=a+1
+
+In python : 
+	There is no increment or decrement
+	There is no switch statement
+	There is no do-while loop
+	Indentation is required
+	Python is called as Dynamic(Direct) Typing Language. ie., There is no need of using a datatype
+	In python all are objects. There is no values
+	There is no char datatype. ie., '' and "" are equal
+	While loop is most preferrable in python
+	Tokens are used --> Smallest individual unit is known as Token
+	Tokens are :
+		literals
+		identifiers
+		keywords
+		operators
+		special symbols
+		strings
+
+Literals --> literal(constants) - fixed value.
+Numeric Constants - Integer Constants, Real Constants
+String Constants  - '', "", ''' ''', """ """
+Boolean literals  - True, false
+
+In C       - short, int, long int, long long int, float, double, char, double
+In Java    - short, byte, int, float, double, str, char
+In Python  - int, str, float, bool
+
+Identifiers --> These are the names given to variables, lists, functions, classes, etc.,
+
+Identifier Rules - 
+	1. Consists of alphabets and digits
+	2. No special Character is allowed Except _(underscore)
+	3. first letter is either alphabet or _(underscore)
+	4. No keyword or reserved word must be used as identifier
+	5. Maximum length may be 8 to 32 (depends upon OS)
+
+Variable --> A variable can store any value. 
+
+Keywords --> In C = 32 keywords are available
+
+import keyword
+print(keyword.kwlist)
+
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif',
+'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or',
+'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+In Python We have overall 35 Keywords
+
+Operators --> These are used to perform some operations between two or more operands
+	1. Arithmetic Operator 	--> +, -, *, /(Float division), //(Int division), %
+	2. Relational Operator  --> <, >, <=, >=, ==, !=
+	3. Logical Operator     --> and, or, not
+	4. Bitwise Operator     --> &, |, ^, <<, >>, ~
+	5. Assignment Operator  --> =, +=, -=, *=, /=, %=, //=, **=, &=, |=, ^=, >>=, <<=
+	6. Comma Operator
+	7. Membership Operator
+	8. Identity Operator
+
+Python Arithmetic Operators
+Arithmetic operators are used with numeric values to perform common mathematical operations:
+
+Operator	Name	Example
++	Addition	x + y	
+-	Subtraction	x - y	
+*	Multiplication	x * y	
+/	Division	x / y	
+%	Modulus		x % y	
+**	Exponentiation	x ** y	
+//	Floor division	x // y	
+
+Python Assignment Operators
+Assignment operators are used to assign values to variables:
+
+Operator	Example		Same As
+=		x = 5		x = 5	
++=		x += 3		x = x + 3	
+-=		x -= 3		x = x - 3	
+*=		x *= 3		x = x * 3	
+/=		x /= 3		x = x / 3	
+%=		x %= 3		x = x % 3	
+//=		x //= 3		x = x // 3	
+**=		x **= 3		x = x ** 3	
+&=		x &= 3		x = x & 3	
+|=		x |= 3		x = x | 3	
+^=		x ^= 3		x = x ^ 3	
+>>=		x >>= 3		x = x >> 3	
+<<=		x <<= 3		x = x << 3
+
+Python Comparison Operators
+Comparison operators are used to compare two values:
+
+Operator	Name				Example	Try it
+==		Equal				x == y	
+!=		Not equal			x != y	
+>		Greater than			x > y	
+<		Less than			x < y	
+>=		Greater than or equal to	x >= y	
+<=		Less than or equal to		x <= y	
+
+Python Logical Operators
+Logical operators are used to combine conditional statements:
+
+Operator	Description						Example	Try it
+and 		Returns True if both statements are true		x < 5 and  x < 10	
+or		Returns True if one of the statements is true		x < 5 or x < 4	
+not		Reverse the result, returns False if the result is true	not(x < 5 and x < 10)	
+
+Python Identity Operators
+Identity operators are used to compare the objects, not if they are equal, but if they are actually the same object, with the same memory location:
+
+Operator	Description							Example	Try it
+is 		Returns True if both variables are the same object		x is y	
+is not		Returns True if both variables are not the same object		x is not y	
+
+Python Membership Operators
+Membership operators are used to test if a sequence is presented in an object:
+
+Operator	Description										Example	Try it
+in 		Returns True if a sequence with the specified value is present in the object		x in y	
+not in		Returns True if a sequence with the specified value is not present in the object	x not in y
+
+Python Bitwise Operators
+Bitwise operators are used to compare (binary) numbers:
+
+Operator	Name			Description
+& 		AND			Sets each bit to 1 if both bits are 1
+|		OR			Sets each bit to 1 if one of two bits is 1
+ ^		XOR			Sets each bit to 1 if only one of two bits is 1
+~ 		NOT			Inverts all the bits
+<<		Zero fill left shift	Shift left by pushing zeros in from the right and let the leftmost bits fall off
+>>		Signed right shift	Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Python, All values are immutable in nature
+
+Mutable - A variable is stored at a location when we change the value. The change happens in the same memory location(id). When it is mutable. Otherwise. it is immutable. (It changes it's ID)
+
+In C --> The same value a , b = 5 can have a different id with the same value. Whereas
+In Python --> a , b = 5 can share the same memory location(id).
+
+Membership --> Value(in, not in)
+Identity   --> Id   (is, is not)
+
+Examples - 
+	1. 23 in [1,2,3,4,5,23,47] --> It is also called as linear search
+	2. a = 2000 and d = 2004     a is not d
+
+
+Reading Values in Python - 
+
+t = int(input())
+
+To read 34 45 side by side
+a, b = int(input()),int(input())
+	or
+a, b = input().split()
+	or
+a, b = map(int,input().split())
+
+To Convert Char to Int 
+
+In C --> ASCII Code
+
+0 - 127
+
+0   -  31 --> Non- Printable Characters
+32  -  47 --> Special Symbols
+48  -  57 --> 0 to 9
+58  -  64 --> Special Symbols
+65  -  90 --> A to Z
+91  -  96 --> Special Symbols
+97  - 122 --> a to z
+123 - 127 --> Special Symbols
+
+in Python --> We called ASCII has UNICODE Character Set
+print(chr(65)) --> A
+print(ord('A')) --> 65
+
+Difference between function and method - 
+A function in a class is called as a method.
+
+a = 54
+Convert the decimal value into binary, octal, hexadecimal
+bin(a), oct(a), hex(a)
+
+Statements - 
+Statement indicates an action to be performed
+
+Selection Statement - if, elif, else
+Loop Statement 	    - for, while
+Jump Statement 	    - Break, Continue
+Block Statement     - :
+

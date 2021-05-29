@@ -1,0 +1,396 @@
+DAY 11 
+--------------
+
+Programiz DSA Course - https://www.programiz.com/dsa/algorithm
+
+
+
+
+
+C++ OOPs - 
+OP stands for Object-Oriented Programming. 
+Procedural programming is about writing procedures or functions whereas, object-oriented programming is about creating objects that contain both data an functions
+OOPs has several advantages over procedural programming - 
+1. OOP is faster and easier to execute
+2. OOP provides a clear structure for the programs
+3. OOP helps to keep the c++ code DRY (Don't Repeat Yourself)
+
+Classes - Replica of real world entities
+ex::> Students, college, school
+
+Objects - Instance of a class
+ex::> name1, name2
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class myClass{
+    public: 
+        int myNum;
+        string myString;
+};
+
+int main() {
+	// your code goes here
+	myClass myObj;
+	myObj.myNum = 15;
+	myObj.myString = "Some Text";
+	cout<<myObj.myNum<<endl;
+	cout<<myObj.myString<<endl;
+	return 0;
+}
+
+Op: 
+15
+Some Text
+
+Method defines in Inside the class 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class myClass{
+    public: 
+        void myMethod() {
+            cout<< "Hello World!";
+        }
+};
+
+int main() {
+	// your code goes here
+	myClass myObj;
+	myObj.myMethod();
+	return 0;
+}
+
+
+Method defines outside the class - 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class myClass{
+    public: 
+        void myMethod();
+};
+
+void myClass::myMethod() { // :: are called as Scope Resolution Operator
+    cout<<"Hello World";
+}
+
+int main() {
+	// your code goes here
+	myClass myObj;
+	myObj.myMethod();
+	return 0;
+}
+
+
+Constructors are first method that are called default when you create a class. --> Constructor has the same name as the class, it is always public: it does not have any return value.
+
+Constructor can be written both inside or outside the class
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class myClass{
+    public: 
+        int num;
+        string name;
+        myClass(int n, string s){
+            num = n;
+            name = s;
+        }
+        void print(){
+            cout<<num<<' '<<name;
+        }
+};
+
+
+int main() {
+	// your code goes here
+	
+	myClass myObj1(18,"Abhiram");
+	myClass myObj2(20,"Sumanth");
+	
+	cout<<myObj1.num<<' '<<myObj1.name<<endl;
+	cout<<myObj2.num<<' '<<myObj2.name<<endl;
+	return 0;
+}
+
+
+
+Acess Specifiers are the set of rules that will define from where your methods and attributes can be accessed  --> public: private: protected:
+public - members are accessible from outside the class
+private - members cannot be accessed (or viewed) from outside the class - we can access private variables using public methods.
+protected - members cannot be accessed from outside the class however, they can be accessed in inherited classes.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Employee{
+    private:
+        int salary;
+    public:
+        void setSalary(int s){ // Setter
+            salary = s;
+        }
+        int getSalary(){ // Getter
+            return salary;
+        }
+};
+
+int main() {
+	// your code goes here
+	Employee myObj;
+	myObj.setSalary(50000);
+	cout<<myObj.getSalary();
+	return 0;
+}
+
+Op: 50000
+
+Setter methods - These are used to set the values. These are always public
+Getter methods - These are used to get the values.
+
+Three Properties of OOPS -
+1. Encapsulation 
+2. Inheritance
+3. Polymorphism
+
+Encapsulation - It is an attribute of methods of private variables and it is considered good practice to declare your class attributes as private. Encapsulation ensures better control of your data, because you (or others) can change one part of data. Increases the security of data.
+
+Inheritance - Properties of parent class are inherited to child class and it can be done using : colon symbol.
+There are 4 categories to represent ::> 
+ - Single level Inheritance
+ - Multi  level Inheritance
+ - Multiple     Inheritance
+ - Diamond Inheritance (or) Hybrid Inheritance --> It is of above three 
+		A
+	B		C
+		D
+Here A is a Parent Class and B,C are child classes of Parent Class A and D is a derived class of both B,C parent classes.
+
+Polymorphism - It means many forms, and it occurs when we have many classes that are related to each other by inheritance. 
+ - Add additional properties 
+ - modify existing properties --> This feature is called as polymorphism --> It overrides the parentclass
+
+Concepts - 
+IN C++
+--------------------
+#include <bits/stdc++.h>
+using namespace std;
+
+class Animal{
+    public: 
+        void animalSound(){
+            cout<<"The animal makes a sound \n";
+        }
+};
+
+class Pig: public Animal{
+    public:
+        void animalSound(){
+            cout<<"The pig says: wee wee \n";
+        }
+};
+
+class Dog: public Animal{
+    public:
+        void animalSound(){
+            cout<<"The dog says: bow bow \n";
+        }
+};
+
+
+int main() {
+	// your code goes here
+	Animal myAnimal;
+	Pig myPig;
+	Dog myDog;
+	myAnimal.animalSound();
+	myPig.animalSound();
+	myDog.animalSound();
+	return 0;
+}
+
+IN Python 
+---------------------------
+# cook your dish here
+class Animal:
+    def animalSound(self):
+        print("The animal makes a sound \n")
+
+class Pig(Animal):
+    def animalSound(self):
+        print("The pig says: wee wee \n")
+
+class Dog(Animal):
+    def animalSound(self):
+        print("The dog says: bow bow \n")
+
+myAnimal = Animal()
+myPig = Pig()
+myDog = Dog()
+myAnimal.animalSound()
+myPig.animalSound()
+myDog.animalSound()
+
+
+
+Hackerearth - Algorithms
+--------------------------------
+Sorting 
+1. Bubble Sort
+2. Selection Sort
+3. Insertion Sort
+4. Merge Sort
+5. Quick Sort
+6. Counting Sort
+7. Radix Sort
+8. Bucket Sort
+9. Heap Sort
+10. Shell Sort
+
+Searching - 
+1. Linear Search
+2. Binary Search
+
+sort() function in C++ is Stable sort --> It changes the algorithm based on inputs ::> This is a dynamic algorithm and the above sorting techniques are fixed and static algorithms. These are not changed based on inputs.
+
+
+IP:
+8
+5 10 1 2 15 4 8 6
+OP:
+1 2 4 5 6 8 10 15 
+
+Bubble Sort -
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int n;
+	cin>>n;
+	int a[n];
+	for(int i=0;i<n;i++) cin>>a[i];
+	for(int i=0;i<n;i++){
+	    for(int j=1;j<n;j++){
+	        if(a[j]<a[j-1]){
+	            swap(a[j],a[j-1]);
+	        }
+	    }
+	}
+	for(int i=0;i<n;i++) cout<<a[i]<<' ';
+}
+
+Space Complexity - O(1)
+Time Complexity - Worst-case ::> O(n**2) Best-case ::> O(n)
+
+
+Selection Sort - 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int n;
+	cin>>n;
+	int a[n];
+	for(int i=0;i<n;i++) cin>>a[i];
+	for(int i=0;i<n;i++){
+	    int maxTillNow = a[0];
+	    int maxIndex = 0;
+	    for(int j=1;j<n-i;j++){
+	        if(a[j]>maxTillNow){
+	            maxTillNow = a[j];
+	            maxIndex = j;
+	        }
+	    }
+	    swap(a[maxIndex],a[n-i-1]);
+	}
+	for(int i=0;i<n;i++) cout<<a[i]<<' ';
+}
+
+Space Complexity - O(1)
+Time Complexity - Worst-case ::> O(n**2) Best-case ::> O(n)
+
+
+Insertion Sort - 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int n;
+	cin>>n;
+	int a[n];
+	for(int i=0;i<n;i++) cin>>a[i];
+	for(int i=1;i<n;i++){
+	    for(int j=i;j>=1;j--){
+	        if(a[j]<a[j-1]) swap(a[j],a[j-1]);
+	        else break;
+	    }
+	}
+	for(int i=0;i<n;i++) cout<<a[i]<<' ';
+}
+
+
+Space Complexity - O(1)
+Time Complexity - Worst-case ::> O(n**2) Best-case ::> O(n)
+
+
+Merge Sort - 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Using Recursion can be done
+void merge(int A[],int start, int mid, int end){
+    int p=start, q=mid+1;
+    int Arr[end-start+1];
+    int k=0;
+    for(int i=start;i<=end;i++){
+        if(p>mid) Arr[k++]=A[q++];
+        else if(q>end) Arr[k++]=A[p++];
+        else if(A[p]<A[q]) Arr[k++]=A[p++];
+        else Arr[k++]=A[q++];
+    }
+    for(int i=0;i<k;i++) A[start++]=Arr[i];
+}
+
+void divide(int A[],int start, int end){
+    int mid;
+    if(start<end){
+        mid=(start+end)/2;
+        divide(A,start,mid);
+        divide(A,mid+1,end);
+        merge(A,start,mid,end);
+    }
+}
+
+
+int main() {
+	// your code goes here
+	int n;
+	cin>>n;
+	int a[n];
+	for(int i=0;i<n;i++) cin>>a[i];
+	divide(a,0,n-1);
+	for(int i=0;i<n;i++) cout<<a[i]<<' ';
+}
+
+
+Space Complexity - O(n)
+Time Complexity - O(nlogn)
+
+
+
+Problems - 
+1. Sort Colors - 75
+2. Merge Sorted Array - 88
+3. Squares of a sorted array - 977

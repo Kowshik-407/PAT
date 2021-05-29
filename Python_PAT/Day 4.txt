@@ -1,0 +1,318 @@
+Super Reduced String - 
+
+Reduce a string of lowercase characters in range ascii[‘a’..’z’]by doing a series of operations. 
+In each operation, select a pair of adjacent letters that match, and delete them.
+
+Delete as many characters as possible using this method and return the resulting string. 
+If the final string is empty, return Empty String
+
+input - aaabccddd
+output - abd
+
+Explaination: 
+
+Perform the following sequence of operations to get the final string:
+
+aaabccddd → abccddd → abddd → abd
+
+s = input()
+i = 0
+while i < len(s) - 1:
+    if(s[i] == s[i + 1]):
+        s = s[:i] + s[i+2:]
+        i = 0
+    else:
+        i += 1
+if(len(s) == 0):
+    print("Empty String")    
+else:
+    print(s)
+
+
+Funny String - 
+
+In this challenge, you will determine whether a string is funny or not. 
+To determine whether a string is funny, create a copy of the string in reverse e.g. . 
+Iterating through each string, compare the absolute difference in the ascii values of the characters at positions 0 and 1, 1 and 2 and so on to the end. If the list of absolute differences is the same for both strings, they are funny.
+
+Determine whether a give string is funny. If it is, return Funny, otherwise return Not Funny.
+
+t = int(input())
+
+for _ in range(t):
+    n = list(input())
+    s = []
+    for i in range(len(n)):
+        s.append(ord(n[i]))
+    r = s[::-1]
+    f = True
+    for i in range(len(r) - 1):
+        if abs(s[i] - s[i+1]) != abs(r[i] - r[i+1]):
+            f = False
+            break
+    if f:
+        print("Funny")
+    else:
+        print("Not Funny")
+
+
+Camel Case - 
+
+There is a sequence of words in CamelCase as a string of letters, s, having the following properties:
+
+It is a concatenation of one or more words consisting of English letters.
+All letters in the first word are lowercase.
+For each of the subsequent words, the first letter is uppercase and rest of the letters are lowercase.
+Given , determine the number of words in s.
+
+Sample Input
+
+saveChangesInTheEditor 
+
+Sample Output
+
+5
+
+
+s = input()
+t = s.lower()
+count = 1
+for i in range(len(s)):
+    if(s[i] != t[i]):
+        count += 1
+print(count)
+
+
+s = input()
+count = 1
+for i in s:
+    if i.isupper():
+        count += 1
+print(count)
+
+
+Diagonal Difference - 
+
+Sample Input
+
+3
+11 2 4
+4 5 6
+10 8 -12
+Sample Output
+
+15
+Explanation
+
+The primary diagonal is:
+
+11
+   5
+     -12
+Sum across the primary diagonal: 11 + 5 - 12 = 4
+
+The secondary diagonal is:
+
+     4
+   5
+10
+Sum across the secondary diagonal: 4 + 5 + 10 = 19
+Difference: |4 - 19| = 15
+
+n = int(input().strip())
+arr = []
+
+for _ in range(n):
+    arr.append(list(map(int, input().rstrip().split())))
+    
+d1 = sum([arr[x][x] for x in range(n)]) 
+d2 = sum([arr[x][n-1-x] for x in range (n)])
+print(abs(d1-d2))
+
+
+
+
+
+Dictionary methods - 
+
+1. clear() 	- Removes all the elements from the dictionary
+2. copy()	- Returns a copy of dictionary
+3. fromkeys()	- Returns a dictionary withe the specified keys and value
+4. get()	- Returns the value of the specified key
+5. items()	- Returns a list containing a tuple for each key value pair
+6. keys()	- Returns a list containing the dictionary's keys
+7. pop()	- Removes the element with the specified key
+8. popitem()	- Removes the last inserted key-value pair
+9. setdefault()	- Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+10. update()	- Updates the dictionary with the specified key-value pairs
+11. values()	- Returns a list of all the values in the dictionary
+
+
+
+
+Sets Methods - 
+
+1. add()				- Adds a element to the set
+2. clear()				- Removes all the elements from the set
+3. copy()				- Returns a copy of the set
+4. difference()				- Returns a set containing the difference between two or more sets
+5. difference_update()			- Removes the items in this set that are also included in another, specified set
+6. discard()				- Removes the specified item
+7. intersection()			- Returns a set, is the intersection of two other sets
+8. intersection_update()		- Removes the items in this set that are not present in other, specified set(s)
+9. isdisjoint()				- Returns whether the two sets have a intersection or not
+10. issubset()				- Returns whether another set contains this set or not
+11. issuperset()			- Returns whether this set contains another set or not
+12. pop()				- Removes an element from the set
+13. remove()				- Removes the specified element
+14. symmetric_difference()		- Returns a set withe the symmetric differences of two sets
+15. symmetric_difference_update()	- Inserts the symmetric differences from this set and another
+16. union()				- Return a set containing the union of sets
+17. update()				- Update the set withe union of this set and others
+
+
+Gemstones - 
+
+
+There is a collection of rocks where each rock has various minerals embeded in it. 
+Each type of mineral is designated by a lowercase letter in the range . 
+There may be multiple occurrences of a mineral in a rock. 
+A mineral is called a gemstone if it occurs at least once in each of the rocks in the collection.
+
+Given a list of minerals embedded in each of the rocks, display the number of types of gemstones in the collection.
+
+Sample Input
+
+STDIN       Function
+-----       --------
+3           arr[] size n = 3
+abcdde      arr = ['abcdde', 'baccd', 'eeabg']
+baccd
+eeabg 
+
+Sample Output
+
+2
+
+t = int(input())
+a = ['']*t
+
+for i in range(t):
+    s = input()
+    a[i] = set(s)
+
+z = a[0]
+i = 1
+for i in range(t):
+    z = z.intersection(a[i])
+print(len(z))
+
+
+n = int(input())
+p = []
+
+for i in range(n):
+    s = input()
+    if i == 0:
+        p = set(p).union(set(s))
+    else:
+        p = set(p).intersection(set(s))
+print(len(p))
+
+
+Jumble Letter - 
+
+Prashant started to attend programming lessons. On the first lesson his task was to write a simple program. 
+The program was supposed to do the following: in the given string, consisting if uppercase and lowercase Latin letters, it:
+
+deletes all the vowels
+inserts a character "." before each consonant
+replaces all uppercase consonants with corresponding lowercase ones.
+Vowels are letters "A", "O", "Y", "E", "U", "I", and the rest are consonants. 
+The program's input is exactly one string, it should return the output as a single string, 
+resulting after the program's processing the initial string.
+
+Help Prashant cope with this easy task.
+
+
+SAMPLE INPUT 
+1
+odn
+
+SAMPLE OUTPUT 
+.d.n
+
+t = int(input())
+
+for _ in range(t):
+    s = input()
+    s = s.lower()
+    vowels = ['a','e','i','o','u','y']
+    for i in s:
+        if i in vowels:
+            s = s.replace(i,'')
+    k = '.'.join(s)
+    print('.'+k)
+
+
+t = int(input())
+
+for _ in range(t):
+    s = input().lower()
+    r = 'aeiouy'
+    op = ''
+    for i in s:
+        if i not in r:
+                op += '.'+i
+    print(op)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Functions - 
+
+def functionname(parameters):
+	#body
+
+1. Function can be assigned to a variable
+2. Nested functions are possible in python 
+3. A function can be replaced as a parameter.
+4. We can return a function from a function,
+   communication between actual and formal:
+
+Based on arguments - 
+1. Positional Arguements
+2. Keyword Arguements
+3. Default Arguements
+4. Variable length Arguements
+	A. Arbitrary arguements *args
+	B. Arbitrary Keyword arguements **kwargs
+
+
+Swapping Of Two Numbers - 
+
+
+a, b = 3, 5
+
+a = a + b
+b = a - b
+a = a - b
+
+output = a,b = 5,3
+
+
+Other Important Concepts - 
+
+1. map()
+2. filter()
+3. reduce()

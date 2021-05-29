@@ -1,0 +1,59 @@
+DAY 2
+----------------
+
+Concepts to learn -->
+Vector STL - https://www.geeksforgeeks.org/vector-in-cpp-stl/
+
+
+
+
+Permutations in Python - 
+
+def permute(data,i,length):
+            if(i==length): result.append(''.join(data))
+            else:
+                for j in range(i,length):
+                    data[i],data[j]=data[j],data[i]
+                    permute(data,i+1,length)
+                    data[i],data[j]=data[j],data[i]   
+
+permute(list(s1),0,len(s1))
+
+
+File Handling -->
+1. Opening a file
+2. Default open modes
+		ifstrem - 
+		ofstream - 
+		fstream - 
+3. Writing a file
+4. redaing from a file
+5. Close a file
+
+string to int Conversion - 
+string str="123";
+int num;
+num = stoi(str);
+
+char array to int Conversion -
+char str[]="456";
+int num; 
+num = atoi(str);
+
+int to string Conversion - 
+int num=123;
+string str;
+str = to_string(num);
+
+
+Strings 
+1. <c> Split a String in Balanced Strings - 1221
+2. <c> Reverse Words in a String - 151
+3. <c> Permutation in String - 567
+4. <c> Shuffle string - 1528
+5. <c> Rotate String - 796
+6. <c> Reverse String 2 - 541
+7. Multiply Strings -  43
+8. Decode String - 394
+9. Reorganize string - 767
+10. Repeated string match - 686

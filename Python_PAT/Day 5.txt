@@ -1,0 +1,220 @@
+Recursive Functions - 
+
+"boy will take the stair case n steps he will climb 1 step or 2 steps or 3 steps.
+
+n = 5
+
+11111
+2111
+1211
+1121
+1112
+311
+131
+113
+23
+32
+
+
+Design Patterns - 
+
+
+n = int(input())
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print('#',end='')
+    print('')
+
+n = int(input())
+for i in range(1,n+1):
+    print(("#" * i).ljust(n))
+
+
+#
+##
+###
+####
+#####
+######
+
+
+n = int(input())
+for i in range(1,n+1):
+    for j in range(i,n+1):
+        print('#',end='')
+    print('')
+
+n = int(input())
+for i in range(1,n+1):
+    print(("#" * (n-i+1)).ljust(n))
+
+######
+#####
+####
+###
+##
+#
+
+
+n = int(input())
+for i in range(1,n+1):
+    print(("#" * i).rjust(n))
+
+
+     #
+    ##
+   ###
+  ####
+ #####
+######
+
+n = int(input())
+for i in range(1,n+1):
+    print(("#" * (n-i+1)).rjust(n))
+
+######
+ #####
+  ####
+   ###
+    ##
+     #
+
+
+def steps(n):
+	if n == 1 or n == 0: return 1
+	elif n == 2: return 2
+	else: return steps(n-1)+steps(n-2)+steps(n-3)
+
+n = int(input())
+print(steps(n))
+
+'''
+n = 4
+steps(4) --> return steps(3)+steps(2)+steps(1) --> return steps(2)+steps(1)+steps(0) + 2 + 1 --> return 2 + 1 + 1 + 2 + 1
+
+It prints the value 7
+'''
+
+
+lambda ---> It is an anonymous function 
+map ---> map(function,sequence)
+
+def squares(x):
+	return x*x
+
+l = [int(x) for x in range(1,101)]
+m = list(map(lambda x,y:x*x,l))
+print(m)
+print(sum(l))
+
+reduce --> 
+
+
+l = [int(x) for x in range(1,101)]
+m = reduce(lambda x,y:x+y,l)
+print(m)
+print(sum(l))
+
+
+Caesar Cipher - 
+
+Julius Caesar protected his confidential information by encrypting it using a cipher. 
+Caesar's cipher shifts each letter by a number of letters. 
+If the shift takes you past the end of the alphabet, just rotate back to the front of the alphabet. 
+In the case of a rotation by 3, w, x, y and z would map to z, a, b and c.
+
+Original alphabet:      abcdefghijklmnopqrstuvwxyz
+Alphabet rotated +3:    defghijklmnopqrstuvwxyzabc
+
+n = int(input().strip())
+s = input().strip()
+k = int(input().strip()) % 26
+l = list(s)
+e = []
+for item in l:
+    z = ord(item)
+    if (z >= 97 and z<=122):
+        if (z+k) > 122:
+            e.append(chr(96 + (z+k-122)))
+        else:
+            e.append(chr(z+k))
+    elif (z>=65 and z<=90):
+        if (z+k) > 90:
+            e.append(chr(64 + (z+k-90)))
+        else:
+            e.append(chr(z+k))
+    else:
+        e.append(item)
+print("".join([x for x in e]))
+
+
+n = int(input().strip())
+s = input().strip()
+k = int(input().strip()) % 26
+l = list(s)
+e = ''
+for item in l:
+    z = ord(item)
+    if (z >= 97 and z<=122):
+        if (z+k) > 122:
+            e += chr(96 + (z+k-122))
+        else:
+            e += chr(z+k)
+    elif (z>=65 and z<=90):
+        if (z+k) > 90:
+            e += chr(64 + (z+k-90))
+        else:
+            e += chr(z+k)
+    else:
+        e += item
+print(e)
+
+Weighted Uniform Strings - 
+
+s = input()
+n = int(input())
+li = []
+
+for _ in range(n):
+    t = int(input())
+    li.append(t)
+ 
+seq=[]
+for num in range(1,27):
+    seq.append(num)
+       
+a = [0]*26
+for i in s:
+    a[ord(i) - 97] += 1
+
+    
+l = []
+for i in range(len(a)):
+    l.append(seq[i]*a[i])
+print(l)
+
+s = input()
+n = int(input())
+li = []
+
+for _ in range(n):
+    t = int(input())
+    li.append(t)
+
+def weightedUniformStrings(s, queries):
+    a=ord(s[0])-96
+    leng=set()
+        
+        #I used an extra random character as i needed an
+        #extra iteration or else the last character is not 
+        #getting considered
+    s=s+"_"
+    for i in range(1,len(s)):
+        leng.add(a)
+        if s[i]==s[i-1]:   
+            a+=(ord(s[i])-96)
+        else:
+            a=(ord(s[i])-96)
+    return ["Yes" if i in leng else "No" for i in queries]
+
+print(weightedUniformStrings(s,li))

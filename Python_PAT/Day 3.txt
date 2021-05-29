@@ -1,0 +1,312 @@
+Seating Arrangement - 
+
+Akash and Vishal are quite fond of travelling. They mostly travel by railways. 
+They were travelling in a train one day and they got interested in the seating arrangement of their compartment. 
+The compartment looked something like
+
+
+So they got interested to know the seat number facing them and the seat type facing them. The seats are denoted as follows :
+
+Window Seat : WS
+Middle Seat : MS
+Aisle Seat : AS
+
+You will be given a seat number, find out the seat number facing you and the seat type, i.e. WS, MS or AS.
+
+6 ---> 7  (+1)       
+5 ---> 8  (+3)
+4 ---> 9  (+5)
+3 ---> 10 (+7)
+2 ---> 11 (+9)
+1 ---> 12 (+11)
+
+7  ---> 6  (-1)
+8  ---> 6  (-3)
+9  ---> 6  (-5)
+10 ---> 6  (-7)
+11 ---> 6  (-9)
+12 ---> 6  (-11)
+
+These are 12 seats in change
+hence., i % 12 == 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+
+t = int(input())
+for i in range(t):
+    n = int(input())
+    op = 0
+    seat = ''
+    if n % 12 == 1:
+        seat = "WS"
+        op = n + 11
+    elif n % 12 == 2:
+        seat = 'MS'
+        op = n + 9
+    elif n % 12 == 3:
+        seat = "AS"
+        op = n + 7
+    elif n % 12 == 4:
+        seat = "AS"
+        op = n + 5
+    elif n % 12 == 5:
+        seat = "MS"
+        op = n + 3
+    elif n % 12 == 6:
+        seat = "WS"
+        op = n + 1
+    elif n % 12 == 7:
+        seat = "WS"
+        op = n - 1
+    elif n % 12 == 8:
+        seat = "MS"
+        op = n - 3
+    elif n % 12 == 9:
+        seat = "AS"
+        op = n - 5
+    elif n % 12 == 10:
+        seat = "AS"
+        op = n - 7
+    elif n % 12 == 11:
+        seat = "MS"
+        op = n - 9
+    elif n % 12 == 0:
+        seat = "WS"
+        op = n - 11
+    
+    print(op,seat)
+
+
+
+
+
+Anagrams - 
+
+Given two strings, a and b , that may or may not be of the same length, 
+determine the minimum number of character deletions required to make a and b anagrams.
+Any characters can be deleted from either of the strings.
+
+Input :
+
+test cases,t
+two strings a and b, for each test case
+
+Note : 
+
+Anagram of a word is formed by rearranging the letters of the word.
+
+For e.g. -> For the word RAM - MAR,ARM,AMR,RMA etc. are few anagrams.
+
+
+Case 1 : 
+
+t = int(input())
+
+for i in range(t):
+    a, b = input(), input()
+    sep = " "
+    x = sep.join(a)
+    y = sep.join(b)
+    p = x.split()
+    q = y.split()
+    c = 0
+    for i in p:
+        if i not in q:
+            c += 1
+    for j in q:
+        if j not in p:
+            c +=1
+    print(c)
+
+
+Case - 2 : 
+
+t = int(input())
+
+for i in range(t):
+    a , b = list(input()), list(input())
+    ar = []
+    br = []
+    c = 0
+    li = set(a + b)
+    for k in li:
+        ar.append(a.count(k))
+        br.append(b.count(k))
+    for j in range(len(li)):
+        if ar[j] != br[j]:
+            while ar[j] > br[j]:
+                ar[j] -= 1
+                c += 1
+            while ar[j] < br[j]:
+                br[j] -= 1
+                c += 1
+    print(c)
+
+Case 3 : 
+
+t = int(input())
+
+for _ in range(t):
+	s = input() # aabc
+	p = input() # ccde
+	a = [0] * 26
+	b = [0] * 26
+	for i in s:
+		a[ord(i) - 97] += 1
+	for i in p:
+		b[ord(i) - 97] += 1
+	su = 0
+	for i in range(len(a)):
+		su += abs(a[i] - b[i])
+	print(su)
+
+Case 3 is the method which is easy to solve. 
+Explaination - 
+s = input of first string
+p = input of second string
+a,b = list contains 26 zeros
+after the initialization of both lists -  we can have an ord of the string digit minus the ascii value of 97 
+and we are counting the letters in the word. It is same as for b
+and after the calculation of a,b arrays with a count of letters in s and p. We can have a unique elements between a,b 
+
+EX: 
+s = tttttsss
+p = ssssssssss
+
+output - Removing of 3 sss in both a,b and add the remaining digits
+		ttttt + sssssss = Count of 12
+
+
+Factorial - 
+
+You have been given a positive integer N. You need to find and print the Factorial of this number. 
+The Factorial of a positive integer N refers to the product of all number in the range from 1 to N.
+
+This is done by using recursion
+
+n = int(input())
+
+def fact(x):
+    if x == 0: 
+        res = 1
+    else:
+        res = x * fact(x - 1)
+    return res
+
+print(fact(n))
+
+Palindromic String - 
+
+You have been given a String S. You need to find and print whether this string is a palindrome or not.
+If yes, print "YES" (without quotes), else print "NO" (without quotes).
+
+s = input()
+
+if s[::-1] == s:
+    print("YES")
+else:
+    print("NO")
+
+
+Lists Methods - 
+
+1. len()
+2. count()
+3. index()
+4. min()
+5. max()
+6. avg()
+7. reverse()
+8. sum()
+9. insert()
+10. append()
+11. pop()
+12. remove()
+13. extend()
+14. copy()
+16. clear()
+17. sorted()
+
+
+Tuple Methods - 
+
+1. len()
+2. count()
+3. index()
+4. min()
+5. max()
+6. avg()
+7. sum()
+8. copy()
+9. clear()
+10. sorted()
+11. tuple()
+
+
+Sherlock and Squares - 
+
+import math
+
+t = int(input())
+
+for i in range(t):
+    a = list(map(int,input().split()))
+    x = math.ceil(math.sqrt(a[0]))
+    y = math.floor(math.sqrt(a[1]))
+    print(y - x + 1)
+
+
+
+Sherlock and Array -
+
+t = int(input())
+
+for i in range(t):
+    n = int(input())
+    l = [int(x) for x in input().split()]
+    for i in range(len(l)):
+        if sum(l[:i]) == sum(l[i+1:]):
+            print("YES")
+            break
+    else: print("NO")
+
+
+Concepts - 
+
+import Collections
+Collections.counter ---> Which results the output in the dictionary format
+
+import String
+String.ascii_lowercase --> Which results the output in lowercase
+String.ascii_uppercase --> Which results the output in uppercase
+String.ascii_digits --> Which results the output in digits
+
+Print Hackerearth - 
+
+As a beginner to the programming, Mishki came to Hackerearth platform, to become a better programmer. 
+She solved some problems and felt very confident. Later being a fan of Hackerearth, she gave a problem to her friends to solve. 
+They will be given a string containing only lower case characters (a-z), 
+and they need to find that by using the characters of the given string, 
+how many times they can print "hackerearth"(without quotes). As they are new to programming world, please help them.
+
+SAMPLE INPUT 
+13
+aahkcreeatrha
+
+SAMPLE OUTPUT 
+1
+
+req = list('hackerearth')
+a = set(list(req))
+
+n = int(input())
+s = list(input())
+
+r = []
+ava = []
+res = []
+
+for i,j in zip(a,range(len(a))):
+    r.append(req.count(i))
+    ava.append(s.count(i))
+    res.append(ava[j]//r[j])
+
+print(min(res))

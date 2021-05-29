@@ -1,0 +1,80 @@
+Files - 
+
+File is a collection of data
+It is used store the data permanently
+open() ---> File pointer = open('filename','mode')
+
+MODES - 
+
+'w' 	--> It creates a newfile for write operation
+'r' 	--> It opens a pre-existing file for read operation
+'a' 	--> It opens a pre-existing file for write(append)
+'w+'	--> It creates a new file for write (or) read operations
+'r+' 	--> It opens a pre-existing file for read (or) write operations
+'a+' 	--> It opens a pre-existing file for read (or) append operations
+
+'wb', 'rb', 'ab', 'w+b', 'r+b', 'a+b' 	--> It is a binary file 
+
+close() --> It closes the opened file
+
+with is a keyword used in file which will bypass and automatically closes the file.
+
+
+n = int(input())
+
+a = [[int(x) for x in input().split()] for i in range(n)]
+
+b = [[int(x) for x in input().split()] for i in range(n)]
+
+c = [[0*n]*n]*n
+
+print(c)
+
+if n --> 3
+
+[0,0,0],[0,0,0],[0,0,0]
+
+
+// Multiplication of two arrays
+
+for i in range(n):
+	for j in range(n):
+		for k in range(n):
+			print(c[i][j])
+			c[i][j] += a[i][k] * b[k][j]
+print(c)
+
+
+Concepts - 
+
+try()
+catch()
+finally() blocks are to be learn
+
+OOPs Concepts - 
+
+1. class
+2. object
+3. inheritance
+4. encapsulation
+5. abstraction
+6. polymorphism
+
+
+class - Wrapping up of data and operations(functions) at one place.
+
+object - realworld entity which has certain characteristics.(instance of the class)
+
+inheritance-acquiring properties from one class to another class.
+
+1. Single inheritance
+2. Multilevel inheritance
+3. Multiple inheritance
+4. Hierarchical inheritance
+5. Hybrid inheritance
+
+encapsulation - class
+
+abstraction - showing important things and hiding unimportant things
+
+polymorphism - 

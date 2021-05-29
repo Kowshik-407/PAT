@@ -1,0 +1,87 @@
+DAY 3 
+--------------------
+Concepts -
+
+question 1 - 
+int a=10;
+x =  a--+++a;
+cout<<x;
+
+Value of x? Ans can be 20, 22
+Here 20 can be from associative problem solving ex: gdb compiler
+Here 22 can be from Priority problem solving ex: gcc compiler
+
+20 can be done --> from left to right a-- = 10 and a++ = 10 and addition results 20
+22 can be done --> from right to left ++a = 11 and a-- = 11 and addition results 22
+
+# value has the highest precedence. Therefore we have header files starting with #
+
+
+
+
+1. Pair in C++ STL
+syntax - pair<data_type1, data_type2> pair_name;
+	#include <utility> is the header of pair STL
+Ex:
+#include <iostream>
+#include <utility>
+using namespace std;
+int main()
+{
+    pair<int,char> pair1;
+    
+    pair1.first=100;
+    pair1.second='G';
+    
+    cout<<pair1.first<<" ";
+    cout<<pair1.second<<endl;
+    
+    return 0;
+}
+
+check string,double --> pair<string,double> P("Talentio",1.23);
+If pair is not initialized, the first value of the pair gets automatically initialized. output = 00
+
+There are 1000 students and 1000 doors. First student opens all the doors and the second student goes to the doors 2,4,6,8,-- and closes it and the third student goes to the doors 3,6,9,--- opens the doors closed and closes the doors opened. Write a C++ program to find number of doors opened.
+--> perfect square numbers are opened. Hence 31 doors
+
+l=[1]*1000
+for i in range(1000):
+    if(i%2==0):
+        l[i]=0
+for j in range(3,1000):
+    for i in range(3,1000):
+        if(i%j==0):
+            if(l[i]==0): l[i]=1
+            else: l[i]=0 
+print(sum(l))
+
+Find the sum of first 5 digits of the given number 
+
+x = input()
+s = x[:5]
+sum=0
+for i in s:
+    sum+=int(i)
+print(sum)
+
+Given an unsorted array of numbers. Write a function that test whether array consists of consecutive numbers. Print yes atleast it contains 2 consecutive numbers or no
+
+Given an array of n distinct elements convert an array to reduced form where all elements are in range from 0 to n-1. The order of elements is same that is 0 is placed in place of the smallest element and 1 is placed in 2nd smallest element and so on .
+input : 10 40 20 
+output: 0 2 1
+
+l=[10,40,20]
+x=[]
+x.extend(l)
+x.sort()
+for i in x:
+    print(l.index(i),end=' ')
+
+1. <c> Rotate Function - 396
+2. <c> Duplicate Zeros - 1089
+3. <c> Remove duplicates from sorted array - 26 
+4. <c> Remove duplicates from sorted array 2 - 80
+5. <c> Remove element - 27
+6. <c> Continous subarray sum - 523
+7. Image overlap - 835

@@ -1,0 +1,120 @@
+DAY 9 
+-------------
+
+Non-Linear DS
+----------------
+1. Trees
+2. Graphs
+3. Hash tables
+
+Trees - Root, edge, siblings, leafnode,height
+Height = levels - 1
+EX::> tree has a level 3 therefore, we can have height 2
+Height --> It has the max. number of edges to travel from root.
+Structure of Binary Tree -->
+struct BinTreeNode{
+int data;
+struct BinTreeNode *left;
+struct BinTreeNode *right;
+}
+
+1. Maximum number of nodes at level i? 			Ans ::> 2**(i-1) nodes
+2. Maximum leaf nodes in a tree whose height = H? 	Ans ::> 2**(H) nodes
+ ---> Height of the tree from root node ::> 2**h + 2**(h-1) + 2**(h-2) + -----+ 1 ::> GP - 2**(h+1)-1
+3. Types of Binary Trees - 
+	A. Full binary tree - For each node which has either 0 or 2 children.
+	B. Complete binary tree - A BT is a complete BT if all levels are completely filled and moves to next level and all nodes are left as possible.
+	c. Perfect binary tree - A BT is a perfect BT when all internal nodes have two children and all the leafnodes are at the same level
+
+Full binary tree		Complete binary tree		Perfect binary tree
+	1				1				1
+ 2	       3 		2		3		2 		3
+4  5  8	     6   7  9	     5     6         		      5   4	       6  7 
+
+4. A single node can be a full binary tree or complete binary tree or both --> Ans::> BOTH 
+5. A. For each FBT, it is also complete BT
+   B. For each CBT, it is also full BT		::> Both are also
+
+Tree Traversals - 
+1. Post - order traversals
+2. Pre  - order traversals
+3. In   - order traversals
+
+Inorder traversal - Left <--> Root <--> Right
+Algo:
+inorder(root)
+inorder(root->left)
+   print(root)
+inorder(root->right)
+
+Preorder traversal - Root <--> Left <--> Right
+Algo:
+preorder(root)
+print(root)
+preorder(root->left)
+preorder(root->right)
+
+Postorder traversal - Left <--> Right <--> Root
+Algo:
+postorder(root->left)
+postorder(root->right)
+postorder(root)
+print(root)
+
+Levelorder traversal - Traverse from left to right from level by level
+Algo: 
+This process can be achieved by using Queue Mechanism
+print(root)
+vector<vector<int>>a;
+while(next level!=0)
+q.push(values)
+a.push(q.values)
+return a
+
+EX::> 		1
+	2		3
+    4	   5	     6      7
+
+Inorder 	--> Left,Root,Right ::> 4 2 5 1 6 3 7
+Preorder 	--> Root,Left,Right ::> 1 2 4 5 3 6 7
+Postorder	--> Left,Right,Root ::> 4 5 2 6 7 3 1
+Levelorder	--> From left-Right ::> 1 2 3 4 5 6 7
+
+
+BST - 
+Left subtree elements > Root elements
+Right subtree elements < Root elements
+Right Child > Root Node
+Left Child  < Root Node
+
+EX: 			30
+		15		60	
+	     7	     22      45	   75
+		17 	27
+
+Inorder traversal of BST's --> 7 15 17 22 27 30 45 60 75
+
+Problems - 
+1. Binary Tree Inorder Traversal - 94
+2. Binary Tree Preorder Traversal - 144
+3. Binary Tree Postorder Traversal - 145
+4. Binary Tree Levelorder Traversal - 102
+5. Maximum Depth of Binary Tree - 104
+6. Minimum Depth of Binary Tree - 111
+7. Binary Tree Paths - 257
+8. Diameter of Binary Tree - 543
+9. Maximum Binary Tree - 654
+10. Maximum Width of Binary Tree - 662
+
+BST - 
+11. Search in a binary search tree - 700
+12. Trim a binary search tree
+13. Leaf similar trees
+14. Binary search tree to greater sum tree
+15. Balance a binary search tree
+16. Convert BST to greater tree
+17. Minimum Absolute Difference in BST - 530
+18. Two Sum IV - Input is a BST - 653
+19. Validate Binary Search Tree - 98
+20. Range Sum of BST - 938
+21. Construct Binary Searcg Tree from Preorder Traversal - 1008

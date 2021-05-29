@@ -1,0 +1,332 @@
+DAY 1
+-----------------------------
+1. Lambda contains block of statements --> False
+2. print({1,5,2,4}=={1,2,4,5}) --> True
+3. Use of id() function in python --> Id returns the identity of the object.
+4. all keyword is used to check all the values in the list are True ---> return true, if one is false result false
+5. any keyword is used to check all the values in the list are False --> return false, if one is true result true
+6. l = [3,4] 
+   a = {1,2,l} 
+   print(a) --> results TypeError
+7. a = [0,1,2,3]
+   i = -2
+   for i not in a: print(i) ---> results an error. not in operator should not be used in python
+8. print("Hello {0!r} and {0!s}".format('bow','now')) --> results = Hello 'bow' and bow
+9. Mathematical Operations cannot be performed on a string 
+10. A while loop in python is used for what type of iteration - Indefinite
+11. Return type of function id --> int
+12. a = (9,2,4,5)
+    del a[2] --> Error as tuple is immutable
+13. How many keyword arguments can be passed to a function in a single function call ---> Zero or more
+
+
+Counters concept in Python --> 
+Initialization - Data can be given in three ways
+Way - 1
+from collections import Counter
+l = ['B','B','A','B','C','A','B','B','A','C']
+print(Counter(l))
+
+Way - 2
+from collections import Counter
+l = {'A':3, 'B':5, 'C':2}
+print(Counter(l))
+
+Way - 3
+from collections import Counter
+print(Counter(A=3,B=5,C=2))
+
+Updation - 
+count = collections.Counter()
+count.update(Data)
+
+count = Counter()
+count.update([1,2,3,1,2,1,1,2])
+
+Subtraction - 
+c1 = Counter(A=4,B=3,C=10)
+c2 = Counter(A=10,B=3,C=4)
+c1.subtract(c2)
+print(c1) --> OP:: Counter({'C':6,'B':0,'A':-6})
+
+elements() - 
+coun = Counter(a=1,b=2,c=3)
+print(coun)
+print(list(coun.elements)) --> ['a','b','b','c','c','c']
+
+most_common() - 
+coun = counter(a=1,b=2,c=3,d=120,2=1,f=219)
+for letter, count in coun.most_common(3):
+	print('%s: %d' %(letter,count)) --> f: 219, d: 120, c: 3
+
+namedtuple - 
+Declaration --> Student = namedtuple('Student',['name','age','DOB']) 
+Adding Values ---> S = Student("Kowshik","19","10102001")
+print(S) --> Student("Kowshik","19","10102001")
+Accessing Values --->
+Access by index - print(S[1])
+Access by name  - print(S.name)
+Access by using getattr() - print(getattr(S,"DOB"))
+
+defaultdict - 
+d = defaultdict(lambda: "Not Present")
+d["a"]=1
+d["b"]=2
+print(d["a"]) --> 1
+print(d["b"]) --> 2
+print(d["c"]) --> Not Present
+
+Using List as defaultdict
+d=defaultdict(list)
+for i in range(5): d[i].append(i)
+print(d) --> defaultdict(<class 'list'>,{0:[0], 1:[1], 2:[2], 3:[3], 4:[4]})
+
+Counting integers using dictionary
+d=defaultdict(int)
+l = [1,2,3,4,3,2,1]
+for i in l: d[i]+=1
+print(d) --> defaultdict(<class 'int'>,{1:2, 2:2, 3:2, 4:1})
+
+
+filter in python --> filter(function, sequence)
+def fun(variable):
+    letters = ['a', 'e', 'i', 'o', 'u']
+    if (variable in letters): return True
+    else: return False
+sequence = ['g', 'e', 'e', 'j', 'k', 's', 'p', 'r']
+
+filtered = filter(fun, sequence)
+  
+print('The filtered letters are:')
+for s in filtered:
+    print(s)
+
+OP: 
+The filtered letters are:
+e
+e
+
+type() in python - 
+type() method returns class type of the argument(object) passed as parameter. 
+Syntax - 
+type(object)
+type(name, bases, dict)
+
+setdefault() - 
+person = {'name': 'Phill'}
+
+# key is not in the dictionary
+salary = person.setdefault('salary')
+print('person = ',person)
+print('salary = ',salary)
+
+# key is not in the dictionary
+# default_value is provided
+age = person.setdefault('age', 22)
+print('person = ',person)
+print('age = ',age)
+
+OP::>
+person =  {'name': 'Phill', 'salary': None}
+salary =  None
+person =  {'name': 'Phill', 'age': 22, 'salary': None}
+age =  22
+
+
+DAY 2 
+-----------------------------
+1. The worst case of Quick Sort algorithm - O(n^2)
+2. print('Hello!2@#World'.istitle()) // True
+3. s={4,7} print(s*3) --> Results an error
+4. l1=[1,2,3,4] print(l1.sort()) // None
+5. To find an element in the binary search --> The elements should be sorted in ascending order
+6. Load factor is an average chain length and it is the average number of elements stored in a chain, and is given by the ratio of number of elements stored to the number of slots in the array.
+7. A hash function is a function that computes the location of the key in the array. In a hash table, there are fewer array positions than the keys, so the position of the key in the array has to be computed, this is done using hash function.
+8. Quick sort algorithm is used which technique --> Divide and Conquer
+9. Average case of binary search algorithm --> O(logn)
+10. Real time example of insertion sort --> Arranging the pack of playing cards
+11. Insertion sort algorithm --> Stable, Adaptive
+12. Worst case complexity of binary search using recursion --> O(logn)
+13. In simple uniform hashing, what is the search complexity? --> O(1)
+	--> There are two cases, once when the search is successful and when it is unsuccessful, but in both the cases, the complexity is O(1+alpha) where 1 is to compute the hash function and alpha is the load factor.
+14. Worst case of Merge sort algorithm ---> O(nlogn)
+15. isinstance(obj,class)
+16. Worst case of Linear search algorithm --> O(n)
+17. Worst case complexity of bubble sort --> O(n^2)
+18. Insertion sort is the fastest sorting algorithm for sorting small arrays
+19. True Statements -
+ - Public attributes can be accessed anywhere in the program
+ - In python lang, prefixing the attribute with leading double underscores(__) makes it private.
+ - Private attributes can be accessed outside the class with the help of corresponding getter methods
+ - Methods can be made private.
+20. Time complexity of enqueue in the queue is O(1)
+
+
+
+
+
+Type Error - TypeError is one among the several standard Python exceptions. TypeError is raised whenever an operation is performed on an incorrect/unsupported object type. For example, using the + (addition) operator on a string and an integer value will raise TypeError.
+
+Attribute Error -  AttributeError can be defined as an error that is raised when an attribute reference or assignment fails.
+For example, if we take a variable x we assined a value 10. In this process suppose we want to append another value to that variable. It’s not possible. Because the variable is a integer type it’s not support append method. So in this type of problem we get an error called “AttributeError“. Suppose if the variable is list type then it supports the append method. Than their is no problem and not getting”Attribute error”.
+
+Value Error - Ex::> list1=['iphone','samsung','vivo','MIA3']
+		    e = sorted(list1,key=int); print(e) // Value Error
+
+
+DAY 3 
+-------------------------------
+1. In python, Dictionaries are mutable
+2. for i in range(2.0): print(i) // Results an error
+3. There is no conceptual limit to the size of the list in python lists
+4. True Statements - 
+ - A non-private method in a superclass can be overridden
+ - A derived class is a subset of superclass
+ - The vlaue of a private variable in the superclass cannot be changed in the subclass
+ - When invoking the constructor from a superclass, the constructor of superclass is automatically invoked.
+ - The __eq(other) method is defined in the object class
+ - The __init__() and __repr__() methods are not defined in the object class
+ - The __new__() method doesn't invokes the __init__() method.
+ - set is a mutable data type
+ - A datatype with unordered values
+5. To delete a command in dictionary del d['dfs']
+6. The biggest reason for the use of polymorphism - The program will have a more elegant design and will be easier to maintain and update
+7. What is instantiation in terms of OOP terminology? Creating an instance of class
+8. print '{0:.2}'.format(1.0/3) --> 0.33
+
+
+from itertools import chain
+li = ['ABC', 'DEF', 'GHI', 'JKL']
+# using chain-single iterable.
+res1 = list(chain(li))
+res2 = list(chain.from_iterable(li))
+print("using chain :", res1, end ="\n\n")
+print("using chain.from_iterable :", res2)
+
+Output:
+using chain : [‘ABC’, ‘DEF’, ‘GHI’, ‘JKL’]
+using chain.from_iterable : [‘A’, ‘B’, ‘C’, ‘D’, ‘E’, ‘F’, ‘G’, ‘H’, ‘I’, ‘J’, ‘K’, ‘L’]
+
+
+
+Practice - 1
+
+1. Command that is used to add attributes to an existing relation, is said to be ALTER
+2. True Statements - 
+ - A UNIQUE Constraint allows multiple rows to have NULL values
+ - Integrity constraint cannot be added to a table if the table data is in violation
+ - A PRIMARY KEY doesn't allows a single row to contain	NULL
+3. The algorithm used to compute natural joins and equi joins are called - Merge Join Algorithms
+4. The SQL used by front-end application programs to request data from the DBMS is called --> DML
+5. A table that displays data redundancies yields ____ anomalies. --> Update, Insertion, Deletion
+6. ___ clause is an additional filter that is applied to the result --> Having
+7. Which command allows the removal of all rows from a table --> TRUNCATE Command
+8. The virtual table that its created by data from the result of an SQL "SELECT" statement is called --> View
+9. A type of query that is placed within a WHERE or HAVING clause of another query is called --> Sub query
+10. The primary key must be Both Unique and Not NULL
+11. SELECT ___ dept_name FROM instructor; which displays the unique values of the column --> Distinct
+12. current_locations(code, department, location_id, city); --> To alter the table current_locations and change the datatype of the column city to varchar2(30)? ALTER TABLE current_locations MODIFY(city varchar2(30));
+13. To grant the role admin to a user named John? --> grant admin to John;
+
+Practice - 2
+
+1. The __ clause is used to list the attributes desired in the result of a query --> 	SELECT
+2. In a relational model, relations are termed as --> Tables
+3. In the relational model, cardinality is termed as --> A number of tuples
+4. The HAVING clause does --> Acts like a WHERE clause but is used for groups rather than rows.
+
+Practice - 3
+
+1. Maximum size that is supported by FAT --> 4GB
+2. A Database Management System is a type of ___ Software --> It is a type of system software
+3. FAT in DBMS stands for File Allocation Table
+4. The terminology refers to duplicating or copies of same data at multiple places --> Data Redundancy
+5. Rows of a relation are known as tuples 
+6. Data mining --> It can be used to extract or filter the data and information from the data warehouse
+7. In general, a file is basically a collection of all related  --> Records.
+8. The key is generally used to represents the relationships between the tables --> Foriegn key
+
+
+Practice - 4
+
+1. 3NF --> It is in 2NF and it doesn't have Transitive Dependency
+2. Document Databases is a NoSQL Database Type
+3. An element is inserted in the front end. The time complexity of front is O(1)
+4. A subquery can retrieve zero or more rows and A subquery can appear on either side of a comparison operator
+5. The enqueue is an operation where we add items to the queue. If the queue is full, it is a condition of the Queue the time complexity of enqueue is O(1)
+
+Practice - 5
+
+
+1. Average time complexity for finding out height of Binary tree - O(log n)
+2. The number of external nodes in a full binary tree with n internal nodes - N+1
+3. Suppose a binary is constructed with n nodes, such that each node has exactly either zero or two children. The maximum height of the tree will be - n/2-1
+4. Which type of traversal of binary search tree outputs the value in sorted order - In-order
+5. What is a hash function - A function that computes the location of the key in the array
+6. % is placed in the query's blank portion to select the "dept_name" that also contains Computer Science as its ending string
+7. Which join is equivalent to Cartesian Product - CROSS JOIN
+8. Full Binary tree - Every node has exactly two or Zero Children
+9. Aptitude of 3 statements and 3 conclusions can be achieved by using venn diagrams
+
+Practice - 6
+
+1. True Statements
+	--> A subclass method cannot be overriden by the superclass 
+	--> A non-private method in a superclass can be overridden
+	--> A derived class is a subset of superclass
+	--> When invoking the constructor from a subclass, the constructor of superclass is automatically invoked.
+	--> The value of a private variable in the superclass cannot be changed in the subclass
+2. ___ is a type of inner join which is based on column having same name and same datatype present in both the tables to be joined --> Natural Join
+3. print() is the built-in function in python
+4. NoSQL databases are - MongoDB, Cassandra 
+5. SQL Server is not a NoSQL database
+6. Use of duck typing - Less restriction on the type values that can be passed to a given method.
+7. print(__name__) --> results ::> __main__
+8. Operations allowed in a join are ::> UPDATE, INSERT, DELETE
+9. The __eq(other) method is defined in the object class
+10. The _join returns a resultset table with the matched data from the two tables being joined, then the remaining rows of the right table and null for the remaining left table's columns -->  Right Outer Join and opposite to Left Outer Join
+11. pow(x,y,z) --> (x**y)%z
+12. The _join returns a resultset table with the matched data of two table then remaining rows of both left table and then the right table --> Full Outer Join
+
+
+Practice - 7
+
+1. Heap is an efficient data structure to implement --> It is similar to priority queue
+2. Properties of transactions --> ACID ::> Atomicity, Consistency, Isolation, Durability
+3. Running time of heap sort --> O(nlog2n), O(log base2)
+4. Which one of the following is faster? Shell sort Heap sort --> Shell Sort
+5. CREATE TABLE employee(name VARCHAR, id INTEGER); DDL or DML --> DDL
+DDL --> Data Definition Language under this we have create 
+DML --> Data Manipulation Language under this we have update, delete
+6. Max heap constructed form given set of elements --> 30,10,80,60,15,55? Figure out both max heap
+7. Binary Search follows technique --> Divide and Conquer Technique
+8. Methods used for transactions --> Read() and Write()
+9. Construct min heap from given following elements 120, 140, 40, 50, 80, 70, 560, 90, 20, 100?
+10. To check whether an object "Obj" is an istance of class A or not --> isinstance(obj, A)
+11. Two operations of atomicity involved --> Abort, Commit
+12. Quick sort has the least worst case time-complexity of execution
+13. Equi Join is also known as INNER JOIN
+
+Practice - 8
+
+1. To remove partial dependency --> we can divide the table, remove the attribute which is causing partial dependency.
+2. The COUNT function in SQL returns the number of --> Values
+3. An attribute of a table cannot hold multiple values is the property of --> 1NF (First Normal form)
+4. What is the default return value for a function that does not return any value explicitly --> None
+5. If return statement is not used inside the function, the function will return --> None
+6. The degree of the relationship --> It is the number of participating entities in a relationship
+7. A functional dependency is a relationship between or among --> Attributes
+8. 2NF --> It should be in 1NF and it should not have partial dependency
+9. Order of occurence in a typical SQL Statement - select, where, groupby, having
+10. Functional dependencies are the types of constraints that are based on --> Key
+11. Command used to delete a particular column in a relation --> ALTER, DROP
+12. B is a subclass of A, to invoke the init method in A from B --> A.__init__(self)
+13. How many 3 digit numbers are there with at least one digit repeated? 
+Ans: 252
+Atleast one digit repeated = digits are repeated - each digit is different Digits are repeated
+			   =  9 * 10 * 10 	 - 	9 * 9 * 8
+			   =  900 		 - 	648 		
+			   =  252
+
+
+
