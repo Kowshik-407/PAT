@@ -1,0 +1,44 @@
+I learned the value of hard work by working hard.
+
+DYNAMIC PROGRAMMING - RECURSION + MEMORIZATION
+Importance of DP --> https://www.codesdope.com/course/algorithms-dynamic-programming/
+Kinds of approaches - 
+Have the comparison of two approaches in fibonocci series in python - 1298
+1. Bottom Up Approach - From parent to children --> This can be written using for loops (Without memorization)
+2. Top Down Approach - From children to parent --> This can be written using recursive functions (With memorization)
+Without memorization - O(2^n)
+With memorization - O(1)*n = O(n) = O(size of table)
+
+STATES OF DP
+DP[i]= ith fibonocci number
+DP[i][j]= sum of elements from i to j
+--> What is is DP[i] and DP[i][j] representing - State of the DP
+
+Coin change - 
+class Solution {
+public:
+    int coinChange(vector<int>& coins, int amount) {
+        int n=coins.size();
+        if(amount==0) return -1;
+        int dp[amount+1][n+1];
+        for(int i=0;i<=n;i++) dp[0][i]=0;
+        for(int i=1;i<=amount;i++) dp[i][0]=INT_MAX;
+        for(int j=1;j<=amount;j++){
+            for(int i=1;i<=n;i++){
+                dp[j][i]=dp[j][i-1];
+                int currCoin=coins[i-1];
+                if((currCoin<=j) && (dp[j-currCoin][i]!=INT_MAX)) dp[j][i]=min(dp[j][i], 1+dp[j-currCoin][i]);
+            }
+        }
+        if(dp[amount][n]==INT_MAX) return -1;
+        return dp[amount][n];
+    }
+};
+
+
+Problems - 
+1. Maximum Subarray - 53
+2. Longest Increasing subsequences - 300
+3. partition equal subset sum - 416
+4. Coin Change - 322
+5. Best time to buy and sell stock - 121

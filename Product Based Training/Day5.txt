@@ -1,0 +1,55 @@
+Day 5 
+-----------------
+
+0 1 2 3 4 3 2 1 0
+
+def f(n):
+    if(n<4): 
+        print(n,end=' ')
+        f(n+1)
+    print(n,end=' ')
+f(int())
+
+permutations using backtracking - 
+
+def f(a,x):
+    print(''.join(a),end=' ')
+    for i in range(x,len(a)):
+        for j in range(i+1,len(a)):
+            a[i],a[j]=a[j],a[i]
+            f(a,i+1)
+            a[j],a[i]=a[i],a[j]
+f(list('mbi'),0)
+
+def f(a,x,y):
+    if x==y: print(''.join(a),end=' ')
+    for j in range(x,y):
+        a[x],a[j]=a[j],a[x]
+        f(a,x+1,y)
+        a[j],a[x]=a[x],a[j]
+ff=list("mbi")
+f(ff,0,len(ff))
+
+def f(a,x):
+    if x==len(a): print(''.join(a),end=' ')
+    for j in range(x,len(a)):
+        if(x==j): a[x],a[j]=a[x],a[j];
+        else: a[x],a[j]=a[j],a[x]
+        f(a,x+1)
+        if x==j: a[x],a[j]=a[x],a[j];
+        else: a[j],a[x]=a[x],a[j]
+ff=list("mbi")
+f(ff,0)
+
+def f(a,x):
+    if x==len(a): print(''.join(a),end=' ')
+    for j in range(x,len(a)):
+        a[x],a[j]=a[j],a[x]
+        f(a,x+1)
+        a[j],a[x]=a[x],a[j]
+ff=list("mbi")
+f(ff,0)
+
+
+pblms - 
+1. Restore IP addresses - 93

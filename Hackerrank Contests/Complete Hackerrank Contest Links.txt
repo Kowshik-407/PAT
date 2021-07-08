@@ -1,0 +1,210 @@
+
+
+Tips to Crack Product Based Companies - 
+
+Tip #1 - Master DSA
+============================
+Bit Manipulation
+Trees
+Strings
+Graphs
+Queues
+Recursion
+Linked Lists
+Stacks and Queues
+Dynamic Programming
+Segment Tree
+
+To solve this in best time complexity and best space complexity
+
+Practice 250-300 Problems on Different Topics
+
+
+Tip #2 - Practice to Write Code on Paper & White Board.
+===========================================================
+Before the placements of 2 months. You should beware and practice the code to write in paper. It should be maintained this habit.
+
+
+Tip #3 - Live Projects
+=========================
+Maximum 2 enough - Note this point 
+
+I have the projects - 
+1. Elibrary Management System 	--> C#.NET
+2. Portfolio Project	      	--> Web Development
+3. COVID - 19 Situation 	  	--> Python, ML and DS
+
+
+Tip #4 - Brush up your programming Fundamentals
+===================================================
+
+DBMS -->learn DBMS in 3 Days in W3Schools and try to practice more complex queries. Normalisation Concepts are important in interviews
+OOPs Concepts
+Computer Networks	--> How Fb handles million users. Networking is further more important to move on focus on algorithms and graphs in GFG
+System Design - OS 	--> How twitter system and facebook system happens. More understanding is required in system Design
+Aptitude
+
+
+Tip #5 - Internships
+=========================
+Try to include atomost 2 to 3 internships you have attended in resume with certifications.
+
+
+====================================================================================================================
+
+InfyTQ Basic Practice
+
+https://www.hackerrank.com/contests/svec-test/challenges
+
+https://www.hackerrank.com/contests/svec-infytq-coding-1-1/challenges
+
+https://www.hackerrank.com/contests/svec-infytq-coding-1-2/challenges
+
+
+
+Basic Python Practice
+
+https://www.hackerrank.com/contests/svec-infytq-control-stmts-coding/challenges
+
+https://www.hackerrank.com/contests/svec-strings-coding/challenges
+
+https://www.hackerrank.com/contests/svec-tuple-functions-coding/challenges
+
+
+Python PAT Training for C++
+
+https://www.hackerrank.com/contests/svec-coding/challenges
+
+https://www.hackerrank.com/contests/advance-contest/challenges
+
+https://www.hackerrank.com/contests/advance-2/challenges
+
+https://www.hackerrank.com/contests/svec-infytq-coding-challenge/challenges
+
+https://www.hackerrank.com/contests/svec-infytq-coding-challenge-1-1/challenges
+
+https://www.hackerrank.com/contests/c-advance/challenges
+
+https://www.hackerrank.com/contests/infytqpractice/challenges						- Not Done  (1)
+
+https://www.hackerrank.com/contests/svec-coding-contest-1-4/challenges				- Not Done  (2)
+
+https://www.hackerrank.com/contests/infytq-practice-coding-2/challenges
+
+https://www.hackerrank.com/contests/c-practice-1616559583/challenges
+
+https://www.hackerrank.com/contests/infytq-practice-coding-3/challenges
+
+https://www.hackerrank.com/contests/svec-practice-4/challenges
+
+https://www.hackerrank.com/contests/svec-infytq-coding-challenge-1-5/challenges
+
+https://www.hackerrank.com/contests/svec-practice5-1616755837/challenges
+
+https://www.hackerrank.com/contests/svec-1-6/challenges
+
+https://www.hackerrank.com/contests/svec-practice/challenges
+
+https://www.hackerrank.com/contests/svec-practice-2/challenges
+
+https://www.hackerrank.com/contests/svec-practice-3/challenges
+
+https://www.hackerrank.com/contests/svec-practice-4-1617896224/challenges
+
+https://www.hackerrank.com/contests/svec-practice-5-1618033038/challenges
+
+https://www.hackerrank.com/contests/infytq-practice-coding-5-1/challenges
+
+PBT Practice 
+
+https://www.hackerrank.com/contests/pbt-assessment-2/challenges
+
+https://www.hackerrank.com/contests/pbt-practice-2/challenges
+
+https://www.hackerrank.com/contests/pbt-assessment-3/challenges
+
+https://www.hackerrank.com/contests/pbt-practice-3/challenges
+
+https://www.hackerrank.com/contests/pbt-assessment-4/challenges
+
+https://www.hackerrank.com/contests/pbt-practice-4/challenges
+
+https://www.hackerrank.com/contests/svec-pbt-practice-coding-1-4/challenges 			- Not Done (1)
+
+https://www.hackerrank.com/contests/svec-pbt-practice-coding-1-4-1618489652/challenges  - Not Done (1)
+
+https://www.hackerrank.com/contests/svec-pbt-coding-1-5-practice/challenges				- Not Done (2)
+
+https://www.hackerrank.com/contests/svec-pbt-practice-1618642423/challenges				- Not Done (3)
+
+
+Hack with InfyTQ 
+
+https://www.hackerrank.com/contests/contest-1619032116/challenges 						- Not Done (1)
+
+https://www.hackerrank.com/contests/hack-with-infy-2/challenges							- Not Done (3)
+
+https://www.hackerrank.com/contests/hackwithinfy-coding-contest-1-2/challenges			- Not Done (3)
+
+https://www.hackerrank.com/contests/svec-hackwithinfy-practice-coding-2-1/challenges	- Not Done (3)
+
+https://www.hackerrank.com/contests/svec-hackwithinfy-2-2/challenges					- Not Done (3)
+
+https://www.hackerrank.com/contests/svec-hackwithinfy-practice-coding-2-3/challenges	- Not Done (2)
+
+
+PBT Batch - 2 Practice
+
+https://www.hackerrank.com/contests/svecadp/challenges									- Not Done (3)
+
+https://www.hackerrank.com/contests/svecaimplementation/challenges
+
+https://www.hackerrank.com/contests/svecarecursion/challenges
+
+https://www.hackerrank.com/contests/grand-testasvecaimplementationdp/challenges
+
+https://www.hackerrank.com/contests/svecagrand-test/challenges
+
+https://www.hackerrank.com/contests/svecadp-i/challenges
+
+https://www.hackerrank.com/contests/svecadpatech-4/challenges
+
+https://www.hackerrank.com/contests/svec-tech5-dp-pbt/challenges
+
+https://www.hackerrank.com/contests/svecadpatech-6/challenges
+
+https://www.hackerrank.com/contests/svectech17/challenges
+
+https://www.hackerrank.com/contests/svecatech-8adp/challenges
+
+https://www.hackerrank.com/contests/svecadivide-and-conquerbacktracking/challenges		- Not Done (2)
+
+https://www.hackerrank.com/contests/svecagreedy-1/challenges							- Not Done (2)
+
+https://www.hackerrank.com/contests/svecadp-1623726753/challenges
+
+https://www.hackerrank.com/contests/svecagreedya12-1/challenges							- Not Done (2)
+
+https://www.hackerrank.com/contests/svecatech-13/challenges
+
+https://www.hackerrank.com/contests/svecatech-14astring-manipulation/challenges
+
+https://www.hackerrank.com/contests/sveca16stringmanipulation3/challenges
+
+https://www.hackerrank.com/contests/svecstrings3/challenges								- Not Done (1)
+
+https://www.hackerrank.com/contests/svecatech-16atrees/challenges						- Not Done (3)
+
+https://www.hackerrank.com/contests/svecatech-18atrees/challenges						- Not Done (3)
+
+https://www.hackerrank.com/contests/svecatech-19atrees/challenges						- Not Done (3)
+
+https://www.hackerrank.com/contests/svectreestech20/challenges							- Not Done (3)
+
+https://www.hackerrank.com/contests/treesasvecatech-21/challenges						- Not Done (2)
+
+https://www.hackerrank.com/contests/svec-tech22-treesandgraphs/challenges				- Not Done (2)
+
+https://www.hackerrank.com/contests/svecatech23agraphs/challenges						- Not Done (2)
+
+https://www.hackerrank.com/contests/svecatech24agraphs/challenges						- Not Done (3)

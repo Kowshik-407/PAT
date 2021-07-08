@@ -1,0 +1,228 @@
+Product Based Training Agenda
+=========================================
+
+
+Interview process - Product Based Companies
+Rounds 
+
+Round 1 - DS & Algo Coding Round		--> Hard Coded
+Round 2 - Language Proficiency (Optional)
+Round 3 - DS & Algo Interview			--> Not Hard Coded, To explain it on the board.
+Round 4 - Subjects/project Discussion
+Round 5 - Behavioural/HR Round
+
+Above Rounds. The training concetrates on Round 1 and Round 3. Which are based on coding 
+
+
+Tech 1 - Importance of constraints and complexity analysis
+
+Agenda 
+===============
+1. Introducing Asymptotic measures
+2. Asymptotic Bounding 101
+3. O(1) Time --> Constant Time
+4. O(n) Time --> Linear Time
+5. O(logn) Time --> Logarithmic Time
+6. Memorization
+7. O(n*logn)
+8. O(n!) Time --> Factorial Time
+9. O(|v|+|E|)
+
+
+
+Tech 2 - Importance of BruteForce, Recursion
+
+Agenda 
+==============
+1. The Master Theorem
+2. Useful Recurrence Generalizations
+3. Approximating Time Complexities of Recursive Functions
+
+
+
+
+
+Tech 3 - Dynamic Programming - 1
+
+Agenda
+===============
+1. The Change Making Problem
+2. The 0-1 Knapsack Problem
+3. Max Contingous Subarray Sum
+4. Longest Common Subsequence
+5. Dynamic Programming Fundamentals
+
+
+
+
+Tech 4 - Dynamic Programming - 2
+
+Agenda
+==================
+1. Buy and Sell Stock Once
+2. Number of ways to Traverse a Natrix
+3. Minimum Weight Path in A Triangle
+4. 1D subproblems vs. 2D subproblems
+5. Array Product
+6. Score Combinations
+
+
+
+
+Tech 5 - Dynamic Programming - 3
+
+Agenda 
+======================
+1. Levenshtein Distance
+2. Longest Non-Decreasing Subsequence
+3. DNA Sequence Allignment
+4. Maximum Sum in a Circular Array
+
+
+
+
+
+
+
+
+
+
+
+
+Today topics - 
+
+1. Time and space Complexities
+2. Basics of any Language --> Concentrate on C++
+3. Recursion and Backtracking
+4. Greedy Algorithms
+5. Dynamic Programming
+6. Stacks, Queues, LinkedLists
+7. Trees and Graphs
+
+
+Finding Time Complexity
+============================
+For computers - 
+The program code should contain <= 10^8 Operations
+
+Ex::>
+
+int main(){
+	int a=2,b=2;
+	int c=a+b;
+	cout<<c;
+}
+
+For this program, we have 5 operations
+1. a=2 
+2. b=2 
+3. a+b
+4. c=answe of 3rd operation
+5. printing c
+
+
+int main(){
+	int n;
+	cin>>n;
+	for(int i=0;i<n;i++) cin<<i<<endl;
+}
+
+Total number of operations are 3n+2
+
+In Computer science we have two main assumptions for finding time complexeties - 
+
+Assumptions -
+1. Multiplied Constants are ignored ---> 3*n+2 where 3 is ignored
+2. Additional Constants are ignored ---> 3*n+2 where 2 is ignored
+Therefore the time complexity becomes --> O(n)
+
+Steps to find the time complexity - 
+
+1. Number of Operations
+2. To identify total number of steps
+3. Assumptions
+4. Proportionality with input
+5. Take the largest operation
+
+
+
+Omega, BigO, Theta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PAT training Modules - 
+
+
+1. Programming in Python - Base Module 
+==============================================
+
+- Control Statements
+- Functions and Recursions
+- Collections - List, Tuple, Set
+- Dictionary, String
+- OOP using Python - Classes
+- Objects, OOP Concepts
+
+
+2. Data Structures 
+==================================
+
+- Asymptotic Notations - Standard Notations, Time and Space complexity, O(1) time, O(n) time, O(logn) time, O(nlogn) time
+- Bit Manipulation
+- Problems of Arrays
+- Problems of String Manipulation
+- Linear DS - LinkedLists, Stacks, Queues
+- Searching and Sorting Algorithms
+
+
+3. Advanced Data Structures 
+====================================
+
+- Graphs and Traversals
+- Advanced Algorithms - Minimum Spanning Tree, Single-source shortest paths
+- Advanced Algorithms - All-pairs shortest paths, network flow
+- Trees and Traversals
+- Advanced Trees Algorithms
+- Tries - Segment, Fenwick Trees
+
+
+
+4. Algorithms
+==============================
+
+- Mathematical Computations
+- Recursive Formulation and Master Theorem
+- Slinding Window Technique
+- Two pointer Approach
+- Computational Geometry
+- Divide and Conquer
+- Back Tracking
+
+
+
+5. Advanced Algorithms
+================================
+
+- Dynamic Programming
+- Greedy Algorithm
+- String Processing
+
+
+Pattern of Practicing Everything - 
+
+
+1. Topic-wise Assessment - Daily --> 2 Coding Questions
+2. Practice-Test - Once a week   --> 20 Coding Questions
+3. Grand Test - After every one  --> 4 Coding Questions

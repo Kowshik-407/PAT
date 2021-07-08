@@ -1,0 +1,95 @@
+Day 1 
+-------------------------------
+
+Product based companies - 
+Communication
+Problem solving
+
+Brute-force to an optimised solution
+DS - Graphs, Trees
+Algo - Dynamic programming --> patterns 
+Theory - GFG topics OS, CN
+Practice - LeetCode
+Book - Cracking the Coding Interview
+Complete all 150 pblms on leetcode
+3 of group and make an initialization of theory concepts for a month and move on problem solving questions daily and crack it individually
+projects are mandatory for pdt based companies
+Amazon ACMS --> https://www.geeksforgeeks.org/selection-process-for-amazon-acms-2019-2020/\
+
+Algorithms and Analysis of algorithms
+Backtracking
+Divide and Conquer
+Tree manipulations
+string manipulations
+Greedy algorithms
+
+DAA 10 techniques - 
+1. Iteration
+2. Recursion
+3. Brute force
+4. Backtracking
+5. Greedy Method (Heuristics)
+6. Divide and Conquer
+7. Dynamic Programming
+8. Branch and Bound
+9. Two Pointer
+10. Sliding Window
+
+The focus of this post is to expatiate on the first four: iteration, recursion, brute force and backtracking
+
+
+Problem Solving - 
+Questions 
+1. Taking three inputs and check the triangle is equi, or iso, or scal
+
+Brute - force approach- 
+# cook your dish here
+a,b,c=list(map(int, input().split()))
+if a==b==c: print("Equilateral")
+elif (a==b and a==c) or (b==a and b==c) or (c==a and c==b): print("Isosceles")
+else: print("Scales")
+
+optimal - 1: 
+# cook your dish here
+a=list(map(int, input().split()))
+x=len(set(a))
+if x==1: print("equi")
+elif x==2: print("Iso")
+els: print("scal")
+
+optimal - 2:
+# cook your dish here
+a=list(map(int, input().split()))
+l=["error","equi","isoc","scal"]
+print(l[len(set(a))])
+
+Removal of extra space - 
+l=["error","equi","isoc","scal"]
+print(l[len(set(list(map(int, input().split()))))])
+
+2. To kill the people beside to the ith person and handover the knife to i+1th person and this is happened in circular format. To find the last person in the game. Ex: 100 people and we can have the 73rd person live.
+
+Brute-force - not a optimal approach
+def func(l):
+    for i in range(0,l,2):
+        del l[i]
+a=int(input())
+l=[]
+for i in range(1,a+1):
+    l.append(i)
+if(len(l)==1): print(l)
+else: func(l)
+
+optimal solution - 
+try it using AP, binary format 
+for ex: 11 given and check the number between 1,2,4,8,16 ---
+and find the nth term as sn=1+(n-1)*2
+
+
+
+
+
+
+
+
+

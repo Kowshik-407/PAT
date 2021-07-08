@@ -1,0 +1,14 @@
+Asymptotic notations
+Big O 	--> 
+Omega
+Theta
+
+Constant time
+logarithmic time
+linear
+quasilinear
+exponential
+logarithmic
+factorial
+
+https://www.bigocheatsheet.com/

@@ -1,0 +1,76 @@
+Chess and programming
+Send Feedback
+Mirko is a huge fan of chess and programming, but typical chess soon became boring for him, so he started having fun with rook pieces.
+He found a chessboard with N rows and N columns and placed K rooks on it.
+Mirko’s game is made of the following rules:
+1. Each rook’s power is determined by an integer.
+2. A rook sees all the fields that are in his row or column except its own field.
+3. We say that a field is attacked if the binary XOR of all the powers of the rooks that see the field is greater than 0.
+Notice that the field a rook is at can be attacked or not.
+Initially, Mirko placed the rooks in a certain layout on the board and will make P moves.
+After each move, determine how many fields are attacked.
+Every rook can be moved to any free field on the whole board (not only across column and row).
+Input Format:
+The first line of input contains integers N, K, P.
+Each of the following K lines contains three integers R, C, X. which denote that initially there is a rook of power X on the field (R, C).
+Each of the following P lines contains four integers R1, C1, R2, C2 (1 ≤ R1, C1, R2, C2 ≤ N) which denote that the rook has moved from field (R1, C1) to field (R2, C2).
+It is guaranteed that there will not be two rooks on one field at any point. 
+Constraints:
+1 ≤ N ≤ 1000000000
+1 ≤ K ≤ 100000
+1 ≤ P ≤ 100000
+1 ≤ R, C ≤ N
+1 ≤ X ≤ 1000000000
+
+Time limit : 5 sec
+Output Format:
+The output must consist of P lines, the kth line containing the total number of attacked fields after k moves. 
+Sample Input 1:
+2 2 2
+1 1 1
+2 2 1
+2 2 2 1
+1 1 1 2 
+Sample Output 1:
+4
+0 
+Sample Input 2:
+3 3 4
+1 1 1
+2 2 2
+2 3 3
+2 3 3 3
+3 3 3 1
+1 1 1 2
+3 1 3 2  
+Sample Output 2:
+6
+7
+7
+9  
+Explanation:
+After the first move, every field on the board is attacked.
+For example, field (1, 1) is seen by only one rook so the total XOR for that field is 1. After the second move none of the fields are attacked. For example, field (1,1) is seen by both rooks so the total XOR for that field is 0.
+
+Task is: Given a prime number X, you need to give the count of all numbers in range 1 to 1000000 inclusive which have minimum prime factor X.
+Since captain America is busy in saving world, He want your help to solve this problem. Help Captain America in solving this task.
+Input Format:
+First line consist of number of test cases T.
+Each test case contains a single number X.
+Constraints:
+1 ≤ T ≤ 100000
+Prime number X where 2 ≤ X ≤ 1000000
+Time limit : 1 sec
+Output Format:
+Output for each test case count of all numbers in range 1 to 106 inclusive which have minimum prime factor X.
+Sample Input 1:
+2
+2
+11
+Sample Output 1:
+500000
+20779
+Explanation:
+The minimum prime factor of all even numbers in the range [2, 1000000] is 2, and there are 1000000/2 = 500000 such even numbers.
+The numbers with minimum prime factor as 11 are: 11, 121, 143, ...
+
