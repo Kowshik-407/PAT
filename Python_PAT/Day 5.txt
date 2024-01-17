@@ -15,6 +15,21 @@ n = 5
 23
 32
 
+def steps(n):
+	if n == 1 or n == 0: return 1
+	elif n == 2: return 2
+	else: return steps(n-1)+steps(n-2)+steps(n-3)
+
+n = int(input())
+print(steps(n))
+
+'''
+n = 4
+steps(4) --> return steps(3)+steps(2)+steps(1) --> return steps(2)+steps(1)+steps(0) + 2 + 1 --> return 2 + 1 + 1 + 2 + 1
+
+It prints the value 7
+'''
+
 
 Design Patterns - 
 
@@ -80,21 +95,6 @@ for i in range(1,n+1):
      #
 
 
-def steps(n):
-	if n == 1 or n == 0: return 1
-	elif n == 2: return 2
-	else: return steps(n-1)+steps(n-2)+steps(n-3)
-
-n = int(input())
-print(steps(n))
-
-'''
-n = 4
-steps(4) --> return steps(3)+steps(2)+steps(1) --> return steps(2)+steps(1)+steps(0) + 2 + 1 --> return 2 + 1 + 1 + 2 + 1
-
-It prints the value 7
-'''
-
 
 lambda ---> It is an anonymous function 
 map ---> map(function,sequence)
@@ -102,18 +102,61 @@ map ---> map(function,sequence)
 def squares(x):
 	return x*x
 
-l = [int(x) for x in range(1,101)]
-m = list(map(lambda x,y:x*x,l))
-print(m)
-print(sum(l))
+m = lambda x: x+10
+print(m(5)) #15
 
 reduce --> 
-
 
 l = [int(x) for x in range(1,101)]
 m = reduce(lambda x,y:x+y,l)
 print(m)
 print(sum(l))
+
+Python Map() , Filter() , Reduce() and Lambda Function in Python
+1. Lambda : An anonymous function
+Syntax : f = lambda a : a*a
+f = result value
+lambda = keyword
+a = argument
+a*a = one-line expression
+
+sum of 2 numbers : f = lambda a,b : a+b
+sub of 2 numbers : f = lambda a,b : a-b
+
+2. map()
+- Takes two arguments
+- 1st = function
+- 2nd = iterable item
+
+# Squaring of numbers
+def sqrs(x):
+  return x*x
+list = [1,2,3,4,5]
+sqr_list = list(map(sqrs, list)) 
+sqr_list = list(map(lambda x: x*x, list)) # with lambda
+# [1,4,9,16,25]
+
+3. filter()
+- same as map() but returns the only true values
+
+# IsEven of numbers
+def is_even(x):
+  return x%2==0
+list = [1,2,3,4,5]
+filter_list = list(filter(is_even, list))
+filter_list = list(filter(lambda x: x%2==0, list))
+# [2,4]
+
+4. reduce()
+- Same as map() and filter() but returns only one value
+
+# Sum of numbers
+def add(x,y)
+  return x+y
+list = [1,2,3,4,5]
+sum_value = reduce(add, list)
+sum_value = reduce(lambda x,y: x+y, list)
+# 15
 
 
 Caesar Cipher - 
