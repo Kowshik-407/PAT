@@ -1,0 +1,785 @@
+DSA Understanding
+==================
+Striver's SDE Sheet : https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/
+
+
+Python Notes
+===============
+loop: for i in range(n): ...
+int division : //
+output formatting : "Hello {0} {1}!".format("Mike", "Tyson")
+decimal precision : "{:.2f}".format(3.4343)
+function definition : def funcName(): return ...
+
+list comprehension : should be defined in []
+	print([i for i in range(0,10) if i>4])
+	print([[i, j, k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if i+j+k!=n]) // [[0, 0, 0], [0, 0, 1], [0, 1, 0], [1, 0, 0], [1, 1, 1]] (x=1,y=1,z=1,n=2)
+input intake:
+	arr = input().split() // "Kalam" > ['K', 'a', 'l', 'a', 'm']
+	arr = list(map(int, input().split())) // 12345 > [1, 2, 3, 4, 5]
+Nested lists:
+	l = []
+	l.append([1,2])
+
+View the String + List + Set + Dictionary methods
+list + dictionary : mutable; string + tuple + set : immutable
+mutable : It means the data inside can be changed
+	- list[0] = 2, dic[1] = 5 [Thus, values are updated]
+But, for immutable datatypes the values cannot be updated/modified
+- Thus, to modify the string value = "abcdefgh" to "adcdefgh"
+  - By using string to list conversion (means immutable to mutable and back to it)
+	l = list(string)
+	l[1] = 'd'
+	string = ''.join(l)
+  - Or by slicing
+	string = string[:position] + "d" + string[position+1:] (position=1)
+
+Other concepts:
+textwrap :
+	s = "ABCDEFGHI"
+	textwrap.wrap(s,3) // prints ['ABC', 'DEF', 'GHI']
+	textwrap.fill(s,3) // prints line by line 'ABC' 'DEF' 'GHI'
+
+Learn Basics
+===============
+Patterns
+----------
+
+1. Right-angle triangle pattern:
+---------------------------------
+1
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5
+
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<i; j++){
+                System.out.print(j + " ");
+            }
+            System.out.println(i);
+        }
+
+2. Reverse Right-angle triangle pattern:
+-----------------------------------------
+1 2 3 4 5
+1 2 3 4
+1 2 3 
+1 2  
+1 
+
+        for(int i=n; i>0; i--){
+            for(int j=1; j<i; j++){
+                System.out.print(j + " ");
+            }
+            System.out.println(i);
+        }
+
+3. Triangle pattern
+---------------------
+    *
+   ***  
+  *****
+ *******
+*********
+
+        // total rows = 5, columns = 9
+        // [space, stars, space] = [4,1,4], [3,3,3], [2,5,2], [1,7,1], [0,9,0]
+        // space print : 2 -> 0 to n-i-1 = 2 (assume i starts from 0 and now i=2)
+        // stars print : 5 -> now we are at 3 => j= 1+2*i = 5
+        // space print : 2 -> now we are at 8 => 0 to n-i-1 = 2 
+        // Now, writing with three for loops
+
+        for(int i=0; i<n; i++){
+            // Space
+            for(int j=0; j<n-i-1; j++){
+                System.out.print(" ");
+            }
+            // Star
+            for(int j=0; j<2*i+1; j++){
+                System.out.print("*");
+            }
+            // Space
+            // for(int j=0; j<n-i-1; j++){
+            //     System.out.print(" ");
+            // }
+            System.out.println();
+        }
+
+4. Reverse Triangle pattern
+------------------------------
+*********
+ *******
+  *****
+   ***
+    *
+
+5. Number pattern
+-------------------
+1                 1
+1 2             2 1
+1 2 3         3 2 1
+1 2 3 4     4 3 2 1
+1 2 3 4 5 5 4 3 2 1
+
+        // rows = n = 5, columns = 2*n = 10
+        // value, space, value = [1,8,1], [2,6,2], [3,4,3], [4,2,4], [5,0,5]
+        // value: j -> i (starts from 1)
+        // space: 2*(n-i)
+        // value: i -> 1
+        for(int i=1; i<=n; i++){
+            // value
+            for(int j=1; j<i+1; j++){
+                System.out.print(j + " ");
+            }
+            // Space
+            for(int j=0; j<2*(n-i); j++){
+                System.out.print("  ");
+            }
+            // value
+            for(int j=i; j>0; j--){
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+
+6. Equilateral character pattern
+------------------------------------
+   A
+  ABA
+ ABCBA
+ABCDCBA
+
+        // space, char, space
+        // space: 0 to n-i-1
+        // char: 2*i + 1
+        // space: 0 to n-i-1
+        for(int i=0; i<n; i++){
+            char value = 'A';
+            // Space
+            for(int j=0; j<n-i-1; j++){
+                System.out.print(" ");
+            }
+            // Char
+            // Upto half it is incrementing and then decrementing.
+            int breakpoint = (2*i+1)/2;
+            for(int j=1; j<=2*i+1; j++){
+                System.out.print(value);
+                if(j <= breakpoint){
+                    value++;
+                }
+                else{
+                    value--;
+                }
+            }
+            // Space
+            // for(int j=0; j<n-i-1; j++){
+            //     System.out.print(" ");
+            // }
+            System.out.println();
+        }
+
+7. Hollow Square pattern
+--------------------------
+****
+*  *
+*  *
+****
+
+        // You can assume as it matrix
+        // only first and last rows are to be complete stars + every first and last column
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                if(i==0 || j==0 || i==n-1 || j==n-1){
+                    System.out.print("*");
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+
+8. Square advanced pattern
+-----------------------------
+4 4 4 4 4 4 4
+4 3 3 3 3 3 4
+4 3 2 2 2 3 4
+4 3 2 1 2 3 4
+4 3 2 2 2 3 4
+4 3 3 3 3 3 4
+4 4 4 4 4 4 4
+
+        // This is completely a different approach.. We cannot get it that much ease..
+        // First, before generating the output matrix. We are going to generate a new matrix
+        // Thus, the new matrix starts from 0 to n-1
+        // But, the given matrix is reverse : Starts from n to 1
+        // The matrix i am generating for n=4
+        // The matrix is generated (2n-1)x(2n-1)
+        
+        // 0 0 0 0 0 0 0
+        // 0 1 1 1 1 1 0
+        // 0 1 2 2 2 1 0
+        // 0 1 2 3 2 1 0
+        // 0 1 2 2 2 1 0
+        // 0 1 1 1 1 1 0
+        // 0 0 0 0 0 0 0
+        
+        // Now, to find the exact number for each cell is nothing but the shortest distance
+        // among all the paths.
+        // Assume : [3,2] = 2: The value is min of the below options
+        // top   distance: 3 : i
+        // left  distance: 2 : j
+        // right distance: 4 : 2n-1 -1 -j
+        // bottomdistance: 3 : 2n-1 -1 -i
+        
+        // Once, the assumed matrix is generated then, substract the values in the cell
+        // with the value n.
+        
+        for(int i=0; i<2*n-1; i++){
+            for(int j=0; j<2*n-1; j++){
+                int top = i, bottom = 2*n-2-i;
+                int left = j, right = 2*n-2-j;
+                System.out.print(n-Math.min(Math.min(top, bottom), Math.min(left, right)) + " ");
+            }
+            System.out.println();
+
+
+Maths
+-----------
+1. Reverse a number
+---------------------
+x = given value
+value = storing the reversed value
+
+        while(x!=0){
+            value = value*10 + x%10;
+            x /= 10;
+        }
+
+2. Palindrome check
+---------------------
+O(n/2)
+-- Moving upto half and comparing it
+n = given number
+check = storing the half reversed number
+
+        int check = 0;
+        while(n>check){
+            check = check*10 + n%10;
+            n/=10;
+        }
+        return n == check || n == check/10;
+
+3. GCD or HCF
+----------------
+Using Euclidean Theorem
+gcd(a,b) = gcd(b, a%b);
+
+Using loops
+        while(a>0 && b>0){
+            if(a>b) a = a%b;
+            else b = b%a;
+        }
+        if(a==0) return b;
+        return a;
+
+Using recursion
+        if(m>n){
+            int temp = n;
+            n = m;
+            m = temp;
+        }
+        // Base case : gcd(n, 0) = n
+        if(m==0) return n;
+        // Using Euclidean Theorem
+        return calcGCD(m, n%m);
+
+4. Divisors
+--------------
+n = 5
+output = 21 [allDivisors(1):1 + aD(2):2+1=3 + aD(3):3+1=4 + aD(4):4+2+1=7 + aD(5):5+1=6]
+
+i. Using contibution: O(n)
+- See the occurences and come to the below formula
+1 occurs 5 times
+2 occurs 2 times
+3,4,5 occurs 1 time
+So, the value can be written as {Summation of i*(n/i)}
+
+        int sumValue = 0;
+        for(int i=1; i<=n; i++){
+            sumValue += i*(n/i);
+        }
+        return sumValue;
+
+ii. Using Harmonic Lemma
+        int ans = 0, l = 1;
+        // Iterating over all values of l such that n/l is distinct
+        // There are atmost 2*sqrt(n) such values
+        while(l<=n){
+            int val = n/l;
+            // r: maxium value of i such that n/i is val
+            int r = n/val;
+            ans += ( (r*(r+1))/2 - (l*(l-1))/2 )*val;
+            // moving on to next range
+            l = r+1;
+        }
+        return ans;
+
+5. Prime
+------------
+Checking prime:
+O(sqrt(n))
+		if(num<2){
+			return "NO";
+		}
+		for(int i=2; i<=Math.sqrt(num); i++){
+			if(num%i==0){
+				return "NO";
+			}
+		}
+		return "YES";
+
+To find no. of primes smaller than n
+Sieve of Eratosthenes
+        if(n==0 or n==1): return 0
+        prime = [True for i in range(n)]
+        p=2
+        while(p*p<=n):
+            if(prime[p]==True):
+                for i in range(p*2,n,p):
+                    prime[i]=False
+            p+=1
+        prime[0]=False
+        prime[1]=False
+        c = 0
+        for i in prime:
+            if i==True: c+=1
+        return c
+
+
+Recursion
+-----------
+1. 1 to N without loop using recursion
+---------------------------------------
+n = 5
+output = 1 2 3 4 5
+
+    public static int[] printNos(int x) {
+        // Write Your Code Here
+        return print(0, x, new int[x]);
+    }
+
+    public static int[] print(int i, int x, int[] result){
+        if(x==0){
+            return result;
+        }
+        result[i] = i+1;
+        return print(i+1, x-1, result);
+    }
+
+//y N to 1: result[i] = x;
+
+2. Factorial using recursion
+--------------------------------
+    public static long factorial(long x){
+        if(x==1){
+            return 1;
+        }
+        return x*factorial(x-1);
+
+3. Fibonacci using recursion
+------------------------------
+    public static int[] generateFibonacciNumbers(int n) {
+        // Write your code here.
+        int[] arr = new int[n];
+        if(n==1){
+            return arr;
+        }
+        arr[0] = 0;
+        arr[1] = 1;
+        return recursion(2, n, arr);
+    }
+
+    public static int[] recursion(int i, int n, int[] result){
+        if(i==n){
+            return result;
+        }
+        result[i] = result[i-1] + result[i-2];
+        return recursion(i+1, n, result);
+    }
+
+4. Reversing an array using recursion
+-------------------------------------------
+n = length of array
+nums = array values
+
+Basic approach: O(n)
+    public static int[] reverseArray(int n, int []nums) {
+        // Write your code here.
+        return reverse(0, n, new int[n], nums);
+    }
+
+    public static int[] reverse(int i, int n, int[] result, int[] nums){
+        if(i==n){
+            return result;
+        }
+        result[i] = nums[n-i-1];
+        return reverse(i+1, n, result, nums);
+    }
+
+Optimal approach: O(n/2)
+-- using two pointer approach
+    public static int[] reverseArray(int n, int []nums) {
+        // Write your code here.
+        return reverse(0, n-1, nums);
+    }
+
+    public static int[] reverse(int start, int end, int[] nums){
+        while(start<end){
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            return reverse(start+1, end-1, nums);
+        }
+        return nums;
+
+
+Hashing
+-------------
+1. Count frequency in a range
+-------------------------------
+n = 6 [array size]
+x = 9 [values in array upto]
+arr = [1, 3, 1, 9, 2, 7]
+output: Count of array from 1 to 6 - 2 1 1 0 0 0
+
+Basic hashing
+time/space: O(n)/O(n)
+        int[] arr = new int[n];
+        for(int num: nums){
+            if(num <= n){
+                arr[num-1]++;
+            }
+        }
+        return arr;
+
+
+Advanced hashing:
+(In-array count frequency) - time/space : O(n) / O(1)
+        // Iterate through the array and modify the elements to track the frequency
+        int i=0;
+        while(i<n){
+            // Skip the element if it is not within our range
+            if(nums[i]>n || nums[i]<1){
+                i++;
+                continue;
+            }
+            // Calculate the index of the element
+            int j = nums[i] - 1;
+            // Update the frequencies
+            if(nums[j]<0){
+                nums[i] = 0;
+                nums[j]--;
+                i++;
+                continue;
+            }
+            else{
+                // Swapping
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+                nums[j] = -1;
+            }
+        }
+
+        // Adjust the negative values to positive frequencies.
+        for(int k=0; k<nums.length; k++){
+            if(nums[k]<0) nums[k] *= -1;
+            else nums[k] = 0;
+        }
+        return nums;
+
+
+
+Sorting
+===========
+1. Selection Sort
+--------------------
+O(n**2)/O(1)
+- Iterate the array from start to end for every iteration SELECT MINIMUM and SWAP it.
+
+        // Using loops
+        int n = arr.length;
+        for(int i=0; i<n; i++){
+            int mini = arr[i], index = i;
+            for(int j=i+1; j<n; j++){
+                // Find the minimum value and its index
+                if(mini>arr[j]){
+                    mini = arr[j];
+                    index = j;
+                }
+            }
+            // Swap the elements to get the first element as minimum
+            int temp = arr[i];
+            arr[i] = arr[index];
+            arr[index] = temp;
+        }
+
+    public static void selectionSort(int[] arr) {
+        //Your code goes here
+        // Using Recursion
+        selection(arr, arr.length, 0);
+    }
+
+    public static void selection(int[] arr, int n, int index){
+        // Return when start and size are same
+        if(index == n) return;
+        
+        // Retrieving minimum index
+        int k = minIndex(arr, index, n-1);
+
+        // Swap elements only if index and min. index are not same
+        if(k!=index){
+            int temp = arr[index];
+            arr[index] = arr[k];
+            arr[k] = temp;
+        }
+
+        // Call selection sort recursively
+        selection(arr, n, index+1);
+    }
+
+    public static int minIndex(int[] arr, int index, int n){
+        if(index == n) return index;
+
+        // Find min of remaining elements
+        int k = minIndex(arr, index+1, n);
+
+        // Return minimum of current and remaining
+        return (arr[index] < arr[k])? index: k;
+    }
+
+
+2. Bubble Sort
+----------------
+O(n**2)/O(1)
+- Iterate the array from start to end for every iteration by COMPARING its ADJACENT value everytime and pushes the maximum to the last by doing ADJACENT SWAPS
+
+        // Using loops
+        boolean swapped;
+        for(int i=0; i<n; i++){
+            swapped = false;
+            for(int j=i+1; j<n; j++){
+                // Swapping the elements if the adjacent is smaller than its value
+                if(arr[i]>arr[j]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+                swapped = true;
+            }
+            // If the array is unchanged then, the array is in sorted order.
+            // No need to change anything, Just stop the iteration.
+            if(swapped == false) break;
+        }
+
+        // Using recursion
+        if(n<=1) return;
+        for(int j=0; j<n-1; j++){
+            if(arr[j]>arr[j+1]){
+                int temp = arr[j]; 
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+        bubbleSort(arr, n-1);
+
+
+3. Insertion Sort
+--------------------
+O(n**2)/O(1)
+- Iterate the array from start to end by stepping one element at a time. Thus, compares the last subarray element to the remaining array and sort it. So, it basically TAKE an element and PLACE it in its correct order
+
+        // Using loops
+        for(int i=0; i<n; i++){
+            int j = i;
+            // Checking the array from right to left and making comparisons
+            while(j>0 && arr[j-1]>arr[j]){
+                // Swap elements
+                int temp = arr[j-1];
+                arr[j-1] = arr[j];
+                arr[j] = temp;
+                // Decrement the index
+                j--;
+            }
+        }
+
+        // Using recursion
+        if(n<=1) return;
+
+        // Sort first n-1 elements. Starts comparing first two elements
+        // and starts sorting the array accordingly from right to left
+        insertionSort(arr, n-1);
+
+        // Insert last element in its correct position in sorted array
+        int last = arr[n-1];
+        int j = n-2;
+
+        // Move elements
+        while(j>=0 && arr[j]>last){
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = last;
+
+
+4. Merge Sort
+--------------------
+O(nlogn)/O(n)
+Explained within the code
+
+    public static void mergeSort(int[] arr, int low, int high){
+        // Write your code here
+        // Divide and Conquer(Merge) = O(nlogn)/O(n)
+        // See for dividing the array we use recursion with indexes
+        // Base case : Doing recursion until if the array has only one element
+        // Means, the array has only one element both left and right are pointing
+        // to the same element. So, we cannot go further dividing thus stops
+        if(low >= high) return;
+
+        // Now, we are dividing the array into two halfs so, we are taking mid index
+        int mid = (low+high)/2;
+
+        // Divide the left array recursively from left to mid
+        mergeSort(arr, low, mid);
+
+        // Divide the right array recursively from mid+1 to right
+        mergeSort(arr, mid+1, high);
+
+        // Once, the array is divided. The main agenda is to conquer (merge)
+        // Merging the array in the sorted order. So, going to another function
+        // For merging the array, we require low, mid, and high
+        merge(arr, low, mid, high);
+    }
+
+// Merge 1 - Without taking the sub arrays : Easy one w/o any array division
+    public static void merge(int[] arr, int low, int mid, int high){
+        // Starting indexes for the both left and right arrays in a single array
+        // Note: Not dividing the single array into two sub arrays.
+        // Instead taking one of the same length array and pushing the elements
+        // into it in sorted manner. Once, done pushing back into the same array
+        int left = low, right = mid+1;
+
+        // Storing the sorted order of two arrays
+        int[] sortedArray = new int[high+1];
+        int arrIndex = 0; // sorted array index
+
+        // In-array sorting of both arrays
+        while(left<=mid && right<=high){
+            if(arr[left]<=arr[right]){
+                sortedArray[arrIndex++] = arr[left++];
+            }
+            else{
+                sortedArray[arrIndex++] = arr[right++];
+            }
+        }
+
+        // Placing the rest of the elements in the array
+        // Left array
+        while(left<=mid){
+            sortedArray[arrIndex++] = arr[left++];
+        }
+        // Right array
+        while(right<=high){
+            sortedArray[arrIndex++] = arr[right++];
+        }
+
+        // Restoring the elements back into its original array
+        // SortedArray[i-low] is kept because, sortedArray indexing starts from 0
+        // But, the real arr starts from low.
+        for(int i=low; i<=high; i++){
+            arr[i] = sortedArray[i-low];
+        }
+    }
+
+
+5. Quick Sort
+--------------------
+O(nlogn)/O(1)
+
+Intuition: 
+-- Pick a pivot and place it in its correct place in the sorted array
+-- Place the smaller on the left and larger on the right
+-- repeat the above steps for both left and right subarrays
+
+Pivot can be:
+- 1st element in the array
+- last element in the array
+- median of the array
+- random element of the array
+
+-- Now, preferring the pivot = 1st element
+
+// Ascending Order
+
+		// Divide and Conquer(Merge) = O(nlogn)/O(1) - The best sorting algo
+		// Assuming the pivot as first element
+		// Two steps approach:
+		// 1. Place the pivot in it's correct place
+		// 2. Recursively call the left array and right array
+
+		// Always high > low
+		if(low<high){
+			// Step 1
+			int partitionIndex = partition(arr, low, high);
+			// Step 2
+			quickSort(arr, low, partitionIndex-1);
+			quickSort(arr, partitionIndex+1, high);
+		}
+	}
+
+	public static int partition(int[] arr, int low, int high){
+		// Considering pivot as first element
+		int pivot = low;
+		
+		// Now, main part comes: Finding the right place of pivot in the array
+		// Using two pointer approach at first and last
+		int left = low, right = high;
+
+		// Check always the left value should be smaller than pivot and
+		// right value should always be greater than pivot
+		// The approach:
+		// if arr[left] >= arr[pivot] : stop (left pointer) else left++
+		// if arr[right]< arr[pivot] : stop (rightpointer) else right--
+		// then, swap both elements of arr[left] and arr[right]
+		// the above approach should be iterated upto left>right.
+		// Once done, then simply swap arr[left] and arr[pivot] and
+		// return current pivot index = left index
+		
+		// 
+		while(left<right){
+			while(arr[left] <= arr[pivot] && left<=high-1) left++;
+			while(arr[right]> arr[pivot] && right>=low+1) right--;
+			// Swapping both left and right
+			// Only if the right should not cross left
+			if(left<right) swap(arr, left, right);
+		}
+		// Thus, if the right is crossed the left.
+		// Then, swapping right and the pivot
+		swap(arr, right, pivot);
+		return right;
+	}
+
+	public static void swap(int[] arr, int i, int j){
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+
+// Descending Order
+-- Easy just replace the signs for left and right while loops
+			while(arr[left] >= arr[pivot] && left<=high-1) left++;
+			while(arr[right]< arr[pivot] && right>=low+1) right--;

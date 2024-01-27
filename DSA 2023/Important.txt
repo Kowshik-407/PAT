@@ -1,0 +1,114 @@
+Interview Questions
+
+08-28-2023
+- Before asking this give a quick intro of yours'
+Hi <name>, I am Kowshik Kumar Aitha having 1+ years of professional experience in the field of software industry comprising of ASP.NET Core + Azure Tech stack. I am skilled in C#, Java, Python, MongoDB languages and as well as ASP.NET Core framework, React Library and Azure DevOps. I worked on various projects but I want to address three major works. One is the development of Payment Central Web Application for the Microsoft organization using ASP.NET Core and Azure services here, i handled the works of Unit testing, API handling, functional testing, and as well as deployment of azure resources, and the second which i am personally developed a Library Management System web application using ASP.NET Core for handling both front-end and back-end and also used Microsoft SQL Server as a database client. Third, the development of COVID-19 Prediction as a 3-tier architecture project using Python, datascience and ML and here i performed Data Extraction, Data Analysis, and Data Manipulation, and finally i want to add that i am certified on AZ-900 Cloud Practitioner, and AZ-204 Assocaite Cloud Developer. That's all about me....
+
+- Tell me about yourself and which areas you are skilled on and the most promenient works you have worked on and how much is the contribution of yours in it
+
+
+Java Concepts
+
+1. For a Core Java Developer , Questions around following topics should be good.
+OOPs Concepts
+Abstract Classes and Interfaces
+Constructors
+Overloading and Overriding
+File IO and Serialization
+Collections - List , Map , Set - Search, Sorting Algorithms
+Access Specifiers
+Exceptions - Checked , Unchecked
+Generics
+Java Keywords - static , final , volatile, synchronized , transient, this , super etc.
+JVM and Memory Management
+MultiThreading and Synchronization
+HashCode and Equals
+Design Patterns
+Dependency Injection
+Reflection API
+Java 8 features - Lambda Expressions , Default Methods.
+
+
+2. If Someone is being hired for a Network / Distributed Application, Following questions can be asked
+Communication Protocols like IP, HTTP, TCP, FTP,UDP
+Synchronous vs Asynchronus Communication
+Sockets
+Technologies like RMI, RCP
+Message Queues
+Interface APIs - JMS, JDBC
+ORMs - EJB ( Session Beans , Entity beans, MDB's ), Hibernate
+
+
+3. If someone has to work on a Java based web application then he can be asked questions around following topics -
+JSP / JSF
+Servlets / filters / Interceptors
+Session Management / Transaction Management
+JNDI
+Architectures - n Tier, MVC
+Web Frameworks like Struts / Spring
+Service Oriented Architecture / Web Services - SOAP / Rest
+Web Technologies like HTML, CSS, Javascript and JQuery
+Markup Languages like XML and JSON.
+Application and Web Servers
+Caching
+Cloud service (AWS, SoftLayer, BlueMix)
+
+
+4. If someone has to work on Java UI, then questions around following can be expected -
+Applets
+Frameworks like Swing, SWT, AWT
+Advanced Frameworks like JavaFX
+
+
+5. Every Developer is expected to have knowledge regarding the Data structures. If you are applying positions for a product / system development companies, lot stress will be given to these Questions.
+Arrays , Linked List
+Search Algorithm and their complexity
+Sorting Algorithms and their complexity
+Trees , Graphs
+
+
+6. Every Java Developer is expected to have Database Knowledge so questions around following concepts can be asked
+Database Drivers
+Normalization / Denormalization
+Isolation Levels
+Transaction Management
+SQL Tuning / Optimization
+SQL Queries - Inner Outer Joins, Group By , Having
+Prepared Statement and their benefit.
+Indices , Views
+Stored Procedures
+Triggers
+Cursors
+
+
+7. Moreover questions around Tools, Methodologies, Processes can be asked -
+Development Tools - Eclipse / RAD
+Design Tools and Diagrams
+Configuration Management Tools like SVN, Clearcase etc
+Defect Management
+Build Tools like Maven, Ant etc
+Testing - Unit Testing, JUnit , Black box , White Box
+Development Methodologies - Agile / Waterfall / Iterative
+Requirement Analysis
+Release Management
+
+
+8. and then Interviewer can also ask open ended questions.
+Which feature would you most like to see added to Java?
+Which feature would you most like to be removed from Java?
+Have you gone through some of the features introduced with latest Java version ?
+Do you think removing Perm gen completely in Java 8 is a good idea ?
+How would you go about debugging an exception ?
+How does Java differ from other programming languages you've worked with?
+How do you document your code ?
+If you are given a choice to implement something using javascript or Java ? Which technology will you use and why ?
+What Design Patterns you have used in your project ?
+Which Web application Framework - Struts, Spring do you like and Why ?
+Which IDE, Source Control,Build tool you think is best ?
+Which development methodology you would like to work with ?
+Do you think using open source servers like Apache , Tomcat is a better idea than paid servers ?
+Which testing tools do you use ?
+What are the most important performance issues in Java web applications
+What are the most important technologies / specifications in Java EE 6?
+Do you like pair programming ? What's your views on Agile methodology comparing to SDLC ?
+
